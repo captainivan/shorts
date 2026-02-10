@@ -9,8 +9,7 @@ import {
 } from "remotion";
 import "./remotion.css";
 
-import subtitles from "@/subtitle/subtitle.json";
-
+import subtitles from "../subtitle/subtitle.json";
 const FPS = 30;
 const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
 
