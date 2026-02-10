@@ -6,6 +6,7 @@ import {
 	useCurrentFrame,
 	interpolate,
 	Easing,
+	staticFile,
 } from "remotion";
 import "./remotion.css";
 
@@ -118,7 +119,7 @@ const Scenes = () => {
 				return (
 					<Sequence key={i} from={from} durationInFrames={duration + fade}>
 						<Img
-							src={`/image/${scene.image}.jpeg`}
+							src={staticFile(`image/${scene.image}.jpeg`)}
 							style={{
 								width: "100%",
 								height: "100%",
@@ -227,8 +228,8 @@ export const MyComposition = () => {
 	return (
 		<AbsoluteFill style={{ backgroundColor: "black" }}>
 			<Scenes />
-			<Audio src="/audio/script.mp3" />
-			<Audio src="/audio/bgmusic.mp3" volume={0.18} />
+			<Audio src={staticFile("audio/script.mp3")} />
+			<Audio src={staticFile("audio/bgmusic.mp3")} volume={0.18} />
 			<Captions />
 		</AbsoluteFill>
 	);
