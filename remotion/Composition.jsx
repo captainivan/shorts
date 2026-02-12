@@ -16,38 +16,181 @@ const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
 
 /* ---------------- SCENES ---------------- */
 const RAW_SCENES = [
-	{ image: 1, fromWord: 0, toWord: 15 },
-	{ image: 2, fromWord: 16, toWord: 29 },
-	{ image: 3, fromWord: 30, toWord: 33 },
-	{ image: 4, fromWord: 34, toWord: 41 },
-	{ image: 5, fromWord: 42, toWord: 53 },
-	{ image: 6, fromWord: 54, toWord: 60 },
-	{ image: 7, fromWord: 61, toWord: 67 },
-	{ image: 8, fromWord: 68, toWord: 75 },
-	{ image: 9, fromWord: 76, toWord: 85 },
-	{ image: 10, fromWord: 86, toWord: 93 },
-	{ image: 11, fromWord: 94, toWord: 101 },
-	{ image: 12, fromWord: 102, toWord: 108 },
-	{ image: 13, fromWord: 109, toWord: 112 },
-	{ image: 14, fromWord: 113, toWord: 123 },
-	{ image: 15, fromWord: 124, toWord: 131 },
-	{ image: 16, fromWord: 132, toWord: 137 },
-	{ image: 17, fromWord: 138, toWord: 145 },
-	{ image: 18, fromWord: 146, toWord: 152 },
-	{ image: 19, fromWord: 153, toWord: 160 },
-	{ image: 20, fromWord: 161, toWord: 168 },
-	{ image: 21, fromWord: 169, toWord: 175 },
-	{ image: 22, fromWord: 176, toWord: 185 },
-	{ image: 23, fromWord: 186, toWord: 193 },
-	{ image: 24, fromWord: 194, toWord: 201 },
-	{ image: 25, fromWord: 202, toWord: 209 },
-	{ image: 26, fromWord: 210, toWord: 216 },
-	{ image: 27, fromWord: 217, toWord: 225 },
-	{ image: 28, fromWord: 226, toWord: 234 },
-	{ image: 29, fromWord: 235, toWord: 243 },
-	{ image: 30, fromWord: 244, toWord: 251 },
-	{ image: 31, fromWord: 252, toWord: 260 },
-	{ image: 32, fromWord: 261, toWord: 272 },
+	{
+		"image": 1,
+		"fromWord": 0,
+		"toWord": 10
+	},
+	{
+		"image": 2,
+		"fromWord": 11,
+		"toWord": 21
+	},
+	{
+		"image": 3,
+		"fromWord": 22,
+		"toWord": 30
+	},
+	{
+		"image": 4,
+		"fromWord": 31,
+		"toWord": 34
+	},
+	{
+		"image": 5,
+		"fromWord": 35,
+		"toWord": 46
+	},
+	{
+		"image": 6,
+		"fromWord": 47,
+		"toWord": 52
+	},
+	{
+		"image": 7,
+		"fromWord": 53,
+		"toWord": 59
+	},
+	{
+		"image": 8,
+		"fromWord": 60,
+		"toWord": 68
+	},
+	{
+		"image": 9,
+		"fromWord": 69,
+		"toWord": 76
+	},
+	{
+		"image": 10,
+		"fromWord": 77,
+		"toWord": 83
+	},
+	{
+		"image": 11,
+		"fromWord": 84,
+		"toWord": 94
+	},
+	{
+		"image": 12,
+		"fromWord": 95,
+		"toWord": 102
+	},
+	{
+		"image": 13,
+		"fromWord": 103,
+		"toWord": 112
+	},
+	{
+		"image": 14,
+		"fromWord": 113,
+		"toWord": 120
+	},
+	{
+		"image": 15,
+		"fromWord": 121,
+		"toWord": 129
+	},
+	{
+		"image": 16,
+		"fromWord": 130,
+		"toWord": 139
+	},
+	{
+		"image": 17,
+		"fromWord": 140,
+		"toWord": 149
+	},
+	{
+		"image": 18,
+		"fromWord": 150,
+		"toWord": 156
+	},
+	{
+		"image": 19,
+		"fromWord": 157,
+		"toWord": 167
+	},
+	{
+		"image": 20,
+		"fromWord": 168,
+		"toWord": 173
+	},
+	{
+		"image": 21,
+		"fromWord": 174,
+		"toWord": 182
+	},
+	{
+		"image": 22,
+		"fromWord": 183,
+		"toWord": 191
+	},
+	{
+		"image": 23,
+		"fromWord": 192,
+		"toWord": 200
+	},
+	{
+		"image": 24,
+		"fromWord": 201,
+		"toWord": 212
+	},
+	{
+		"image": 25,
+		"fromWord": 213,
+		"toWord": 223
+	},
+	{
+		"image": 26,
+		"fromWord": 224,
+		"toWord": 232
+	},
+	{
+		"image": 27,
+		"fromWord": 233,
+		"toWord": 239
+	},
+	{
+		"image": 28,
+		"fromWord": 240,
+		"toWord": 247
+	},
+	{
+		"image": 29,
+		"fromWord": 248,
+		"toWord": 256
+	},
+	{
+		"image": 30,
+		"fromWord": 257,
+		"toWord": 266
+	},
+	{
+		"image": 31,
+		"fromWord": 267,
+		"toWord": 274
+	},
+	{
+		"image": 32,
+		"fromWord": 275,
+		"toWord": 284
+	},
+	{
+		"image": 33,
+		"fromWord": 285,
+		"toWord": 292
+	},
+	{
+		"image": 34,
+		"fromWord": 293,
+		"toWord": 302
+	},
+	{
+		"image": 35,
+		"fromWord": 303,
+		"toWord": 307
+	}
 ];
 
 const SCENES = RAW_SCENES.map((s) => ({
@@ -211,7 +354,7 @@ const Captions = () => {
 				)}
 				<div
 					style={{
-						color: "red",
+						color: "green",
 						WebkitTextStroke: "1.4px rgba(0,0,0,1)",
 						transform: `scale(${pop})`,
 					}}
