@@ -10,7 +10,7 @@ import {
 } from "remotion";
 import "./remotion.css";
 import subtitles from "../subtitle/subtitle.json";
-import { generateScenes } from "@/videoData/imagePromptData";
+import { generateScenes } from "../videoData/imagePromptData";
 
 const FPS = 30;
 const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
