@@ -10,8 +10,8 @@ const RemotionRoot = () => {
         component={MyComposition}
         durationInFrames={2130}
         fps={30}
-        width={360}
-        height={640}
+        width={1080}
+        height={1920}
       />
     </>
   );
