@@ -10,42 +10,17 @@ import {
 } from "remotion";
 import "./remotion.css";
 import subtitles from "../subtitle/subtitle.json";
+import { generateScenes } from "@/videoData/imagePromptData";
 
 const FPS = 30;
 const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
 
-/* ---------------- SCENES ---------------- */
-const RAW_SCENES = [
-	{ image: 1, fromWord: 0, toWord: 15 },
-	{ image: 2, fromWord: 16, toWord: 29 },
-	{ image: 3, fromWord: 30, toWord: 33 },
-	{ image: 4, fromWord: 34, toWord: 41 },
-	{ image: 5, fromWord: 42, toWord: 53 },
-	{ image: 6, fromWord: 54, toWord: 60 },
-	{ image: 7, fromWord: 61, toWord: 67 },
-	{ image: 8, fromWord: 68, toWord: 75 },
-	{ image: 9, fromWord: 76, toWord: 85 },
-	{ image: 10, fromWord: 86, toWord: 93 },
-	{ image: 11, fromWord: 94, toWord: 101 },
-	{ image: 12, fromWord: 102, toWord: 108 },
-	{ image: 13, fromWord: 109, toWord: 112 },
-	{ image: 14, fromWord: 113, toWord: 123 },
-	{ image: 15, fromWord: 124, toWord: 131 },
-	{ image: 16, fromWord: 132, toWord: 137 },
-	{ image: 17, fromWord: 138, toWord: 145 },
-	{ image: 18, fromWord: 146, toWord: 152 },
-	{ image: 19, fromWord: 153, toWord: 160 },
-	{ image: 20, fromWord: 161, toWord: 168 },
-	{ image: 21, fromWord: 169, toWord: 175 },
-	{ image: 22, fromWord: 176, toWord: 185 },
-	{ image: 23, fromWord: 186, toWord: 193 },
-	{ image: 24, fromWord: 194, toWord: 201 },
-	{ image: 25, fromWord: 202, toWord: 209 },
-	{ image: 26, fromWord: 210, toWord: 216 },
-	{ image: 27, fromWord: 217, toWord: 225 }
-];
 
-const SCENES = RAW_SCENES.map((s) => ({
+
+const scenes = generateScenes(subtitles);
+console.log(scenes)
+
+const SCENES = scenes.map((s) => ({
 	...s,
 	fromWord: Math.min(s.fromWord, subtitles.length - 1),
 	toWord: Math.min(s.toWord, subtitles.length - 1),
@@ -125,7 +100,7 @@ const Scenes = () => {
 				return (
 					<Sequence key={i} from={from} durationInFrames={duration}>
 						<Img
-							src={staticFile(`/image/${scene.image}.jpg`)}
+							src={staticFile(`/image/${scene.scene}.jpg`)}
 							style={{
 								width: "100%",
 								height: "100%",
@@ -176,7 +151,7 @@ const Captions = () => {
 			<div
 				style={{
 					textAlign: "center",
-					fontSize: 90,
+					fontSize: 100,
 					fontWeight: 800,
 					fontFamily: "MyFont",
 					letterSpacing: "0.06em",
