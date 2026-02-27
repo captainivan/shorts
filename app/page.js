@@ -9,8 +9,8 @@ export default function Home() {
         controls={true}
         component={MyComposition}
         durationInFrames={2130}
-        compositionWidth={360}
-        compositionHeight={640}
+        compositionWidth={1080}
+        compositionHeight={1920}
         fps={30}
         className='border border-2 border-white/50 rounded-xl'
       />

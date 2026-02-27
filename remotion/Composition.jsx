@@ -176,7 +176,7 @@ const Captions = () => {
 			<div
 				style={{
 					textAlign: "center",
-					fontSize: 35,
+					fontSize: 90,
 					fontWeight: 800,
 					fontFamily: "MyFont",
 					letterSpacing: "0.06em",
