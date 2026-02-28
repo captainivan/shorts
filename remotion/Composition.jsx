@@ -191,7 +191,7 @@ export const MyComposition = () => {
 		<AbsoluteFill style={{ backgroundColor: "black" }}>
 			<Scenes />
 			<Audio src={staticFile("audio/script.mp3")} />
-			<Audio src={staticFile("audio/bgmusic.mp3")} volume={0.2} />
+			<Audio src={staticFile("audio/bgmusic3.mp3")} volume={0.2} loop={true} />
 			<Captions />
 		</AbsoluteFill>
 	);
