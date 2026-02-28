@@ -1,2326 +1,1381 @@
 [
   {
-    "text": "In",
-    "start": 160,
-    "end": 280,
+    "text": "This",
+    "start": 240,
+    "end": 360,
     "confidence": 0.99902344,
     "speaker": null
   },
   {
-    "text": "1923,",
-    "start": 280,
-    "end": 1200,
-    "confidence": 0.99967,
-    "speaker": null
-  },
-  {
-    "text": "Germany",
-    "start": 1200,
-    "end": 1760,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "was",
-    "start": 1760,
-    "end": 1880,
+    "text": "is",
+    "start": 360,
+    "end": 520,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "a",
-    "start": 1880,
+    "text": "the",
+    "start": 520,
+    "end": 640,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "only",
+    "start": 640,
+    "end": 840,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "man",
+    "start": 840,
+    "end": 1120,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "in",
+    "start": 1120,
+    "end": 1360,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "history",
+    "start": 1360,
+    "end": 1680,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "who",
+    "start": 1760,
     "end": 2080,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "financial",
+    "text": "volunteered",
     "start": 2080,
-    "end": 2400,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "corpse.",
-    "start": 2480,
-    "end": 3120,
-    "confidence": 0.84065753,
-    "speaker": null
-  },
-  {
-    "text": "A",
-    "start": 3120,
-    "end": 3360,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "single",
-    "start": 3360,
-    "end": 3640,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "loaf",
-    "start": 3640,
-    "end": 3880,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "of",
-    "start": 3880,
-    "end": 4040,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "bread",
-    "start": 4040,
-    "end": 4360,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "cost",
-    "start": 4360,
-    "end": 4680,
-    "confidence": 0.9970703,
-    "speaker": null
-  },
-  {
-    "text": "200",
-    "start": 4680,
-    "end": 5280,
-    "confidence": 0.99902,
-    "speaker": null
-  },
-  {
-    "text": "billion",
-    "start": 5360,
-    "end": 5760,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "marks.",
-    "start": 5840,
-    "end": 6440,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "People",
-    "start": 6440,
-    "end": 6720,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "were",
-    "start": 6720,
-    "end": 6920,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "literally",
-    "start": 6920,
-    "end": 7360,
-    "confidence": 0.9998372,
-    "speaker": null
-  },
-  {
-    "text": "hauling",
-    "start": 7360,
-    "end": 7920,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "wheelbarrows",
-    "start": 7920,
-    "end": 8720,
-    "confidence": 0.99993026,
-    "speaker": null
-  },
-  {
-    "text": "of",
-    "start": 8720,
-    "end": 8840,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "cash",
-    "start": 8840,
-    "end": 9200,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "just",
-    "start": 9200,
-    "end": 9520,
-    "confidence": 0.9995117,
+    "end": 2640,
+    "confidence": 0.9326172,
     "speaker": null
   },
   {
     "text": "to",
-    "start": 9520,
-    "end": 9720,
+    "start": 2640,
+    "end": 2800,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "buy",
-    "start": 9720,
-    "end": 9880,
+    "text": "go",
+    "start": 2800,
+    "end": 2920,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "a",
-    "start": 9880,
-    "end": 10040,
-    "confidence": 1,
+    "text": "to",
+    "start": 2920,
+    "end": 3080,
+    "confidence": 0.99853516,
     "speaker": null
   },
   {
-    "text": "newspaper.",
-    "start": 10040,
-    "end": 10640,
-    "confidence": 0.9996745,
+    "text": "Auschwitz.",
+    "start": 3080,
+    "end": 3800,
+    "confidence": 0.9194336,
     "speaker": null
   },
   {
-    "text": "And",
-    "start": 10640,
-    "end": 10920,
-    "confidence": 0.9980469,
+    "text": "In",
+    "start": 3800,
+    "end": 4080,
+    "confidence": 0.7548828,
     "speaker": null
   },
   {
-    "text": "others",
-    "start": 10920,
-    "end": 11120,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "were",
-    "start": 11120,
-    "end": 11360,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "burning",
-    "start": 11360,
-    "end": 11760,
-    "confidence": 0.8991699,
-    "speaker": null
-  },
-  {
-    "text": "stacks",
-    "start": 11760,
-    "end": 12240,
-    "confidence": 0.9889323,
-    "speaker": null
-  },
-  {
-    "text": "of",
-    "start": 12240,
-    "end": 12360,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "money",
-    "start": 12360,
-    "end": 12560,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "for",
-    "start": 12560,
-    "end": 12800,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "heat",
-    "start": 12800,
-    "end": 13160,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "because",
-    "start": 13160,
-    "end": 13440,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "it",
-    "start": 13440,
-    "end": 13600,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "was",
-    "start": 13600,
-    "end": 13720,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "cheaper",
-    "start": 13720,
-    "end": 14000,
-    "confidence": 0.99934894,
-    "speaker": null
-  },
-  {
-    "text": "than",
-    "start": 14000,
-    "end": 14240,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "firewood.",
-    "start": 14240,
-    "end": 14920,
-    "confidence": 0.8429362,
+    "text": "1940.",
+    "start": 4080,
+    "end": 4720,
+    "confidence": 0.99951,
     "speaker": null
   },
   {
     "text": "The",
-    "start": 14920,
-    "end": 15160,
-    "confidence": 0.9995117,
+    "start": 4720,
+    "end": 5000,
+    "confidence": 1,
     "speaker": null
   },
   {
     "text": "world",
-    "start": 15160,
-    "end": 15400,
+    "start": 5000,
+    "end": 5240,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "thought",
-    "start": 15400,
-    "end": 15640,
+    "text": "had",
+    "start": 5240,
+    "end": 5520,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "the",
-    "start": 15640,
-    "end": 15800,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "country",
-    "start": 15800,
-    "end": 16079,
+    "text": "no",
+    "start": 5520,
+    "end": 5760,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "was",
-    "start": 16079,
-    "end": 16400,
+    "text": "idea",
+    "start": 5760,
+    "end": 6120,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "finished.",
-    "start": 16400,
-    "end": 16960,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "Then",
-    "start": 17040,
-    "end": 17360,
-    "confidence": 0.9980469,
-    "speaker": null
-  },
-  {
-    "text": "came",
-    "start": 17360,
-    "end": 17640,
+    "text": "what",
+    "start": 6120,
+    "end": 6280,
     "confidence": 1,
     "speaker": null
   },
   {
     "text": "the",
-    "start": 17640,
-    "end": 17880,
+    "start": 6280,
+    "end": 6440,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "wizard.",
-    "start": 17880,
-    "end": 18280,
-    "confidence": 0.9991862,
+    "text": "Nazis",
+    "start": 6440,
+    "end": 6840,
+    "confidence": 0.99934894,
     "speaker": null
   },
   {
-    "text": "Hjalmar",
-    "start": 18280,
-    "end": 18840,
-    "confidence": 0.84707034,
-    "speaker": null
-  },
-  {
-    "text": "Shakt",
-    "start": 18840,
-    "end": 19320,
-    "confidence": 0.75528973,
-    "speaker": null
-  },
-  {
-    "text": "was",
-    "start": 19320,
-    "end": 19480,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 19480,
-    "end": 19600,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "man",
-    "start": 19600,
-    "end": 19720,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "with",
-    "start": 19720,
-    "end": 19880,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 19880,
-    "end": 20040,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "high",
-    "start": 20040,
-    "end": 20240,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "collar",
-    "start": 20240,
-    "end": 20680,
-    "confidence": 0.9445801,
-    "speaker": null
-  },
-  {
-    "text": "and",
-    "start": 20680,
-    "end": 20840,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 20840,
-    "end": 21040,
-    "confidence": 0.99560547,
-    "speaker": null
-  },
-  {
-    "text": "genius",
-    "start": 21040,
-    "end": 21480,
-    "confidence": 0.9972331,
-    "speaker": null
-  },
-  {
-    "text": "level",
-    "start": 21480,
-    "end": 21800,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "iq.",
-    "start": 21800,
-    "end": 22320,
-    "confidence": 0.99975586,
-    "speaker": null
-  },
-  {
-    "text": "He",
-    "start": 22320,
-    "end": 22600,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "didn't",
-    "start": 22600,
-    "end": 22840,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "use",
-    "start": 22840,
-    "end": 23040,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "gold",
-    "start": 23040,
-    "end": 23320,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "to",
-    "start": 23320,
-    "end": 23520,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "fix",
-    "start": 23520,
-    "end": 23720,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 23720,
-    "end": 23920,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "economy,",
-    "start": 23920,
-    "end": 24240,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "he",
-    "start": 24400,
-    "end": 24680,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "used",
-    "start": 24680,
-    "end": 24920,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 24920,
-    "end": 25160,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "trick.",
-    "start": 25160,
-    "end": 25480,
-    "confidence": 0.9680176,
-    "speaker": null
-  },
-  {
-    "text": "He",
-    "start": 25480,
-    "end": 25720,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "created",
-    "start": 25720,
-    "end": 26040,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 26040,
-    "end": 26200,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "new",
-    "start": 26200,
-    "end": 26400,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "currency",
-    "start": 26400,
-    "end": 26840,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "backed",
-    "start": 26840,
-    "end": 27240,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "by",
-    "start": 27240,
-    "end": 27440,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "nothing",
-    "start": 27440,
-    "end": 27720,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "but",
-    "start": 27720,
-    "end": 27920,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 27920,
-    "end": 28080,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "promise.",
-    "start": 28080,
-    "end": 28520,
-    "confidence": 0.99975586,
-    "speaker": null
-  },
-  {
-    "text": "And",
-    "start": 28520,
-    "end": 28760,
-    "confidence": 0.9951172,
-    "speaker": null
-  },
-  {
-    "text": "he",
-    "start": 28760,
-    "end": 28920,
-    "confidence": 0.9975586,
-    "speaker": null
-  },
-  {
-    "text": "stopped",
-    "start": 28920,
-    "end": 29320,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 29320,
-    "end": 29520,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "world's",
-    "start": 29520,
-    "end": 29960,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "worst",
-    "start": 29960,
-    "end": 30240,
-    "confidence": 0.99975586,
-    "speaker": null
-  },
-  {
-    "text": "hyperinflation",
-    "start": 30240,
-    "end": 31040,
-    "confidence": 0.97858536,
-    "speaker": null
-  },
-  {
-    "text": "in",
-    "start": 31040,
-    "end": 31240,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 31240,
-    "end": 31400,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "single",
-    "start": 31400,
-    "end": 31720,
-    "confidence": 0.99975586,
-    "speaker": null
-  },
-  {
-    "text": "week.",
-    "start": 31720,
-    "end": 31910,
-    "confidence": 0.94921875,
-    "speaker": null
-  },
-  {
-    "text": "He",
-    "start": 32220,
-    "end": 32340,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "became",
-    "start": 32340,
-    "end": 32580,
-    "confidence": 0.99975586,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 32580,
-    "end": 32740,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "national",
-    "start": 32740,
-    "end": 33020,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "hero.",
-    "start": 33100,
-    "end": 33540,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "But",
-    "start": 33540,
-    "end": 33740,
-    "confidence": 0.8173828,
-    "speaker": null
-  },
-  {
-    "text": "his",
-    "start": 33740,
-    "end": 33940,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "greatest",
-    "start": 33940,
-    "end": 34340,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "miracle",
-    "start": 34340,
-    "end": 34820,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "was",
-    "start": 34820,
-    "end": 35020,
+    "text": "were",
+    "start": 6840,
+    "end": 7040,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
     "text": "actually",
-    "start": 35020,
-    "end": 35340,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "his",
-    "start": 35420,
-    "end": 35740,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "darkest.",
-    "start": 35740,
-    "end": 36260,
-    "confidence": 0.99332684,
-    "speaker": null
-  },
-  {
-    "text": "When",
-    "start": 36260,
-    "end": 36500,
+    "start": 7040,
+    "end": 7320,
     "confidence": 0.99902344,
     "speaker": null
   },
   {
-    "text": "the",
-    "start": 36500,
-    "end": 36620,
+    "text": "doing",
+    "start": 7320,
+    "end": 7640,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "Nazis",
-    "start": 36620,
-    "end": 37060,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "took",
-    "start": 37060,
-    "end": 37260,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "power,",
-    "start": 37260,
-    "end": 37580,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "they",
-    "start": 37580,
-    "end": 37860,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "were",
-    "start": 37860,
-    "end": 38020,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "broke",
-    "start": 38020,
-    "end": 38300,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "and",
-    "start": 38300,
-    "end": 38500,
-    "confidence": 0.9970703,
-    "speaker": null
-  },
-  {
-    "text": "forbidden",
-    "start": 38500,
-    "end": 38940,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "by",
-    "start": 38940,
-    "end": 39100,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "treaty",
-    "start": 39100,
-    "end": 39500,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "from",
-    "start": 39500,
-    "end": 39620,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "building",
-    "start": 39620,
-    "end": 39900,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 39900,
-    "end": 40180,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "military.",
-    "start": 40180,
-    "end": 40620,
+    "text": "inside",
+    "start": 7640,
+    "end": 8080,
     "confidence": 0.99975586,
     "speaker": null
   },
   {
+    "text": "their",
+    "start": 8080,
+    "end": 8320,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "camps.",
+    "start": 8320,
+    "end": 8800,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
     "text": "So",
-    "start": 40700,
-    "end": 41020,
-    "confidence": 0.9980469,
-    "speaker": null
-  },
-  {
-    "text": "Schacht",
-    "start": 41020,
-    "end": 41540,
-    "confidence": 0.92122394,
-    "speaker": null
-  },
-  {
-    "text": "invented",
-    "start": 41540,
-    "end": 41940,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "something",
-    "start": 41940,
-    "end": 42140,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "called",
-    "start": 42140,
-    "end": 42420,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "Mepho",
-    "start": 42420,
-    "end": 42980,
-    "confidence": 0.8680013,
-    "speaker": null
-  },
-  {
-    "text": "bills.",
-    "start": 42980,
-    "end": 43420,
-    "confidence": 0.91430664,
-    "speaker": null
-  },
-  {
-    "text": "It",
-    "start": 43420,
-    "end": 43620,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "was",
-    "start": 43620,
-    "end": 43740,
-    "confidence": 1,
+    "start": 8880,
+    "end": 9120,
+    "confidence": 0.99902344,
     "speaker": null
   },
   {
     "text": "a",
-    "start": 43740,
-    "end": 43860,
-    "confidence": 0.99853516,
+    "start": 9120,
+    "end": 9240,
+    "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "ghost",
-    "start": 43860,
-    "end": 44140,
-    "confidence": 1,
+    "text": "Polish",
+    "start": 9240,
+    "end": 9600,
+    "confidence": 0.98706055,
     "speaker": null
   },
   {
-    "text": "currency,",
-    "start": 44140,
-    "end": 44620,
-    "confidence": 0.9909668,
+    "text": "soldier",
+    "start": 9600,
+    "end": 9960,
+    "confidence": 0.99576825,
+    "speaker": null
+  },
+  {
+    "text": "named",
+    "start": 9960,
+    "end": 10240,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "Witold",
+    "start": 10240,
+    "end": 10800,
+    "confidence": 0.8595378,
+    "speaker": null
+  },
+  {
+    "text": "Pilecki",
+    "start": 10800,
+    "end": 11440,
+    "confidence": 0.89345706,
+    "speaker": null
+  },
+  {
+    "text": "walked",
+    "start": 11440,
+    "end": 11800,
+    "confidence": 0.7939453,
+    "speaker": null
+  },
+  {
+    "text": "straight",
+    "start": 11800,
+    "end": 12120,
+    "confidence": 0.9053955,
+    "speaker": null
+  },
+  {
+    "text": "into",
+    "start": 12120,
+    "end": 12320,
+    "confidence": 0.9995117,
     "speaker": null
   },
   {
     "text": "a",
-    "start": 44620,
-    "end": 44900,
+    "start": 12320,
+    "end": 12520,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "massive,",
-    "start": 44900,
-    "end": 45380,
+    "text": "street",
+    "start": 12520,
+    "end": 12760,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "roundup",
+    "start": 12760,
+    "end": 13280,
+    "confidence": 0.9812012,
+    "speaker": null
+  },
+  {
+    "text": "and",
+    "start": 13280,
+    "end": 13480,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "let",
+    "start": 13480,
+    "end": 13640,
+    "confidence": 0.99560547,
+    "speaker": null
+  },
+  {
+    "text": "himself",
+    "start": 13640,
+    "end": 14000,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "get",
+    "start": 14000,
+    "end": 14200,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "secret",
-    "start": 45380,
-    "end": 45740,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "Ponzi",
-    "start": 45740,
-    "end": 46340,
-    "confidence": 0.99890137,
-    "speaker": null
-  },
-  {
-    "text": "scheme",
-    "start": 46340,
-    "end": 46580,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "that",
-    "start": 46580,
-    "end": 46740,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "didn't",
-    "start": 46740,
-    "end": 47020,
-    "confidence": 0.9998372,
-    "speaker": null
-  },
-  {
-    "text": "exist",
-    "start": 47020,
-    "end": 47340,
+    "text": "arrested",
+    "start": 14200,
+    "end": 14760,
     "confidence": 1,
     "speaker": null
   },
   {
     "text": "on",
-    "start": 47340,
-    "end": 47580,
+    "start": 14760,
+    "end": 15040,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "any",
-    "start": 47580,
-    "end": 47859,
-    "confidence": 1,
+    "text": "purpose.",
+    "start": 15040,
+    "end": 15520,
+    "confidence": 0.9996745,
     "speaker": null
   },
   {
-    "text": "official",
-    "start": 47859,
-    "end": 48220,
+    "text": "For",
+    "start": 15600,
+    "end": 16000,
+    "confidence": 0.99853516,
+    "speaker": null
+  },
+  {
+    "text": "947",
+    "start": 16000,
+    "end": 17400,
+    "confidence": 0.9491,
+    "speaker": null
+  },
+  {
+    "text": "days,",
+    "start": 17400,
+    "end": 17760,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "government",
-    "start": 48220,
-    "end": 48620,
+    "text": "he",
+    "start": 17760,
+    "end": 18080,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "lived",
+    "start": 18080,
+    "end": 18360,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "in",
+    "start": 18360,
+    "end": 18480,
     "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "books.",
-    "start": 48620,
-    "end": 49140,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "It",
-    "start": 49140,
-    "end": 49380,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "allowed",
-    "start": 49380,
-    "end": 49620,
-    "confidence": 0.9404297,
     "speaker": null
   },
   {
     "text": "the",
-    "start": 49620,
-    "end": 49780,
+    "start": 18480,
+    "end": 18600,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "death",
+    "start": 18600,
+    "end": 18840,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "camp.",
+    "start": 18840,
+    "end": 19160,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "He",
+    "start": 19160,
+    "end": 19400,
+    "confidence": 0.99853516,
+    "speaker": null
+  },
+  {
+    "text": "didn't",
+    "start": 19400,
+    "end": 19640,
+    "confidence": 0.9996745,
+    "speaker": null
+  },
+  {
+    "text": "just",
+    "start": 19640,
+    "end": 19840,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "survive,",
+    "start": 19840,
+    "end": 20240,
+    "confidence": 0.86246747,
+    "speaker": null
+  },
+  {
+    "text": "he",
+    "start": 20320,
+    "end": 20600,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "built",
+    "start": 20600,
+    "end": 20840,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "a",
+    "start": 20840,
+    "end": 21000,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "secret",
+    "start": 21000,
+    "end": 21280,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "army.",
+    "start": 21280,
+    "end": 21760,
+    "confidence": 0.98876953,
+    "speaker": null
+  },
+  {
+    "text": "Inside,",
+    "start": 21760,
+    "end": 22240,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "he",
+    "start": 22240,
+    "end": 22520,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "smuggled",
+    "start": 22520,
+    "end": 23000,
+    "confidence": 0.9921875,
+    "speaker": null
+  },
+  {
+    "text": "out",
+    "start": 23000,
+    "end": 23160,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 23160,
+    "end": 23320,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "very",
+    "start": 23320,
+    "end": 23560,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "first",
+    "start": 23560,
+    "end": 23920,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "intelligence",
+    "start": 23920,
+    "end": 24520,
+    "confidence": 0.9998779,
+    "speaker": null
+  },
+  {
+    "text": "reports",
+    "start": 24520,
+    "end": 24800,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "proving",
+    "start": 24960,
+    "end": 25360,
+    "confidence": 0.8112793,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 25360,
+    "end": 25560,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "Holocaust",
+    "start": 25560,
+    "end": 26080,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "was",
+    "start": 26080,
+    "end": 26320,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "real.",
+    "start": 26320,
+    "end": 26640,
+    "confidence": 0.99853516,
+    "speaker": null
+  },
+  {
+    "text": "He",
+    "start": 26640,
+    "end": 26960,
+    "confidence": 0.99853516,
+    "speaker": null
+  },
+  {
+    "text": "literally",
+    "start": 26960,
+    "end": 27480,
+    "confidence": 0.9996745,
+    "speaker": null
+  },
+  {
+    "text": "built",
+    "start": 27480,
+    "end": 27840,
+    "confidence": 0.9949544,
+    "speaker": null
+  },
+  {
+    "text": "a",
+    "start": 27840,
+    "end": 28040,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "radio",
+    "start": 28040,
+    "end": 28400,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "from",
+    "start": 28400,
+    "end": 28640,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "scrap",
+    "start": 28640,
+    "end": 29120,
+    "confidence": 0.99609375,
+    "speaker": null
+  },
+  {
+    "text": "parts",
+    "start": 29120,
+    "end": 29480,
+    "confidence": 0.9958496,
+    "speaker": null
+  },
+  {
+    "text": "to",
+    "start": 29480,
+    "end": 29680,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "broadcast",
+    "start": 29680,
+    "end": 30200,
+    "confidence": 0.8639323,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 30200,
+    "end": 30360,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "horror",
+    "start": 30360,
+    "end": 30720,
+    "confidence": 0.9998779,
+    "speaker": null
+  },
+  {
+    "text": "to",
+    "start": 30720,
+    "end": 30880,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 30880,
+    "end": 31000,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "Allies.",
+    "start": 31000,
+    "end": 31440,
+    "confidence": 0.97875977,
+    "speaker": null
+  },
+  {
+    "text": "When",
+    "start": 31440,
+    "end": 31720,
+    "confidence": 0.9663086,
+    "speaker": null
+  },
+  {
+    "text": "he",
+    "start": 31720,
+    "end": 31910,
+    "confidence": 0.9741211,
+    "speaker": null
+  },
+  {
+    "text": "realized",
+    "start": 32060,
+    "end": 32460,
+    "confidence": 0.9621582,
+    "speaker": null
+  },
+  {
+    "text": "no",
+    "start": 32460,
+    "end": 32660,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "one",
+    "start": 32660,
+    "end": 32820,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "was",
+    "start": 32820,
+    "end": 32980,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "coming",
+    "start": 32980,
+    "end": 33180,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "to",
+    "start": 33180,
+    "end": 33380,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "save",
+    "start": 33380,
+    "end": 33620,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "them,",
+    "start": 33620,
+    "end": 33900,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "he",
+    "start": 33900,
+    "end": 34220,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "broke",
+    "start": 34220,
+    "end": 34540,
+    "confidence": 0.99975586,
+    "speaker": null
+  },
+  {
+    "text": "out.",
+    "start": 34540,
+    "end": 34820,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "He",
+    "start": 34820,
+    "end": 35060,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "escaped,",
+    "start": 35060,
+    "end": 35660,
+    "confidence": 0.9986572,
+    "speaker": null
+  },
+  {
+    "text": "fought",
+    "start": 35660,
+    "end": 35940,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 35940,
+    "end": 36100,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
     "text": "Nazis",
-    "start": 49780,
-    "end": 50180,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "to",
-    "start": 50180,
-    "end": 50300,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "buy",
-    "start": 50300,
-    "end": 50500,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "thousands",
-    "start": 50500,
-    "end": 50940,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "of",
-    "start": 50940,
-    "end": 51100,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "tanks",
-    "start": 51100,
-    "end": 51420,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "and",
-    "start": 51420,
-    "end": 51580,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "planes",
-    "start": 51580,
-    "end": 51900,
-    "confidence": 0.9992676,
-    "speaker": null
-  },
-  {
-    "text": "in",
-    "start": 51900,
-    "end": 52140,
+    "start": 36100,
+    "end": 36500,
     "confidence": 0.99902344,
     "speaker": null
   },
   {
-    "text": "total",
-    "start": 52140,
-    "end": 52420,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "secrecy,",
-    "start": 52420,
-    "end": 53020,
+    "text": "again",
+    "start": 36500,
+    "end": 36700,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "while",
-    "start": 53020,
-    "end": 53220,
+    "text": "in",
+    "start": 36700,
+    "end": 36860,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 36860,
+    "end": 36980,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "Warsaw",
+    "start": 36980,
+    "end": 37500,
+    "confidence": 0.9248047,
+    "speaker": null
+  },
+  {
+    "text": "Uprising",
+    "start": 37500,
+    "end": 38100,
+    "confidence": 0.94433594,
+    "speaker": null
+  },
+  {
+    "text": "and",
+    "start": 38100,
+    "end": 38380,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "survived",
+    "start": 38380,
+    "end": 38780,
+    "confidence": 0.9998372,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 38780,
+    "end": 38980,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "war.",
+    "start": 38980,
+    "end": 39260,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "But",
+    "start": 39340,
+    "end": 39660,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "here",
+    "start": 39660,
+    "end": 39940,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "is",
+    "start": 39940,
+    "end": 40180,
+    "confidence": 0.9975586,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 40180,
+    "end": 40340,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "tragedy.",
+    "start": 40340,
+    "end": 40940,
+    "confidence": 0.99348956,
+    "speaker": null
+  },
+  {
+    "text": "After",
+    "start": 40940,
+    "end": 41260,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 41260,
+    "end": 41460,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "war,",
+    "start": 41460,
+    "end": 41700,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "the",
+    "start": 41700,
+    "end": 41940,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "Soviets",
+    "start": 41940,
+    "end": 42500,
+    "confidence": 0.99731445,
+    "speaker": null
+  },
+  {
+    "text": "took",
+    "start": 42500,
+    "end": 42660,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "over",
+    "start": 42660,
+    "end": 42860,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "Poland.",
+    "start": 42860,
+    "end": 43420,
+    "confidence": 0.99975586,
+    "speaker": null
+  },
+  {
+    "text": "They",
+    "start": 43420,
+    "end": 43700,
+    "confidence": 0.99853516,
+    "speaker": null
+  },
+  {
+    "text": "arrested",
+    "start": 43700,
+    "end": 44180,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "him,",
+    "start": 44180,
+    "end": 44380,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "branded",
+    "start": 44380,
+    "end": 44820,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "him",
+    "start": 44820,
+    "end": 44980,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "a",
+    "start": 44980,
+    "end": 45100,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "traitor,",
+    "start": 45100,
+    "end": 45460,
+    "confidence": 0.9116211,
+    "speaker": null
+  },
+  {
+    "text": "and",
+    "start": 45460,
+    "end": 45660,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "executed",
+    "start": 45660,
+    "end": 46260,
+    "confidence": 0.99975586,
+    "speaker": null
+  },
+  {
+    "text": "him.",
+    "start": 46260,
+    "end": 46540,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "His",
+    "start": 46540,
+    "end": 46860,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "name",
+    "start": 46860,
+    "end": 47060,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "was",
+    "start": 47060,
+    "end": 47220,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "erased",
+    "start": 47220,
+    "end": 47620,
+    "confidence": 0.9998779,
+    "speaker": null
+  },
+  {
+    "text": "from",
+    "start": 47620,
+    "end": 47859,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "history",
+    "start": 47859,
+    "end": 48180,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "for",
+    "start": 48180,
+    "end": 48460,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "40",
+    "start": 48460,
+    "end": 48780,
+    "confidence": 0.99902,
+    "speaker": null
+  },
+  {
+    "text": "years.",
+    "start": 48780,
+    "end": 49180,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "He",
+    "start": 49340,
+    "end": 49620,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "was",
+    "start": 49620,
+    "end": 49780,
     "confidence": 1,
     "speaker": null
   },
   {
     "text": "the",
-    "start": 53220,
+    "start": 49780,
+    "end": 49940,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "bravest",
+    "start": 49940,
+    "end": 50460,
+    "confidence": 0.9391276,
+    "speaker": null
+  },
+  {
+    "text": "man",
+    "start": 50460,
+    "end": 50700,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "to",
+    "start": 50700,
+    "end": 50940,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "ever",
+    "start": 50940,
+    "end": 51180,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "live.",
+    "start": 51180,
+    "end": 51460,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "And",
+    "start": 51460,
+    "end": 51700,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "he",
+    "start": 51700,
+    "end": 51900,
+    "confidence": 0.9995117,
+    "speaker": null
+  },
+  {
+    "text": "died",
+    "start": 51900,
+    "end": 52220,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "without",
+    "start": 52220,
+    "end": 52540,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "anyone",
+    "start": 52540,
+    "end": 53020,
+    "confidence": 0.99975586,
+    "speaker": null
+  },
+  {
+    "text": "knowing",
+    "start": 53020,
     "end": 53380,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "rest",
+    "text": "his",
     "start": 53380,
     "end": 53540,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "of",
+    "text": "story.",
     "start": 53540,
-    "end": 53660,
+    "end": 53820,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "the",
-    "start": 53660,
-    "end": 53780,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "world",
-    "start": 53780,
-    "end": 54020,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "thought",
-    "start": 54020,
-    "end": 54260,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "they",
-    "start": 54260,
+    "text": "Until",
+    "start": 54060,
     "end": 54420,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "were",
-    "start": 54420,
-    "end": 54580,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "bankrupt.",
-    "start": 54580,
-    "end": 55020,
-    "confidence": 0.99975586,
+    "text": "now.",
+    "start": 54420,
+    "end": 54780,
+    "confidence": 1,
     "speaker": null
   },
   {
-    "text": "Without",
-    "start": 55020,
-    "end": 55380,
+    "text": "Today,",
+    "start": 54860,
+    "end": 55260,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "Shocked's",
-    "start": 55380,
-    "end": 56020,
-    "confidence": 0.7939453,
-    "speaker": null
-  },
-  {
-    "text": "math,",
-    "start": 56020,
-    "end": 56260,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "Hitler's",
-    "start": 56260,
-    "end": 56780,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "war",
-    "start": 56780,
-    "end": 56940,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "machine",
-    "start": 56940,
-    "end": 57340,
-    "confidence": 0.9998372,
-    "speaker": null
-  },
-  {
-    "text": "would",
-    "start": 57340,
-    "end": 57580,
+    "text": "historians",
+    "start": 55260,
+    "end": 55980,
     "confidence": 0.99902344,
     "speaker": null
   },
   {
-    "text": "never",
-    "start": 57580,
-    "end": 57820,
-    "confidence": 1,
+    "text": "recognize",
+    "start": 55980,
+    "end": 56500,
+    "confidence": 0.8848877,
     "speaker": null
   },
   {
-    "text": "have",
-    "start": 57820,
+    "text": "Vitold",
+    "start": 56500,
+    "end": 57100,
+    "confidence": 0.6422526,
+    "speaker": null
+  },
+  {
+    "text": "Pilecki",
+    "start": 57100,
+    "end": 57700,
+    "confidence": 0.8882812,
+    "speaker": null
+  },
+  {
+    "text": "as",
+    "start": 57700,
+    "end": 57860,
+    "confidence": 0.99902344,
+    "speaker": null
+  },
+  {
+    "text": "a",
+    "start": 57860,
     "end": 58020,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "left",
+    "text": "symbol",
     "start": 58020,
-    "end": 58220,
+    "end": 58300,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "the",
-    "start": 58220,
-    "end": 58420,
+    "text": "of",
+    "start": 58300,
+    "end": 58460,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "garage.",
-    "start": 58420,
+    "text": "moral",
+    "start": 58460,
     "end": 58860,
-    "confidence": 0.9998372,
+    "confidence": 0.99975586,
     "speaker": null
   },
   {
-    "text": "But",
+    "text": "courage,",
     "start": 58860,
-    "end": 59140,
-    "confidence": 0.9980469,
+    "end": 59340,
+    "confidence": 0.9992676,
     "speaker": null
   },
   {
-    "text": "the",
-    "start": 59140,
-    "end": 59260,
-    "confidence": 0.9995117,
+    "text": "proof",
+    "start": 59420,
+    "end": 59860,
+    "confidence": 0.99853516,
     "speaker": null
   },
   {
-    "text": "wizard",
-    "start": 59260,
-    "end": 59660,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "eventually",
-    "start": 59660,
+    "text": "that",
+    "start": 59860,
     "end": 60060,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "realized",
+    "text": "one",
     "start": 60060,
-    "end": 60540,
-    "confidence": 0.9909668,
-    "speaker": null
-  },
-  {
-    "text": "he",
-    "start": 60540,
-    "end": 60740,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "had",
-    "start": 60740,
-    "end": 60900,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "built",
-    "start": 60900,
-    "end": 61140,
-    "confidence": 0.9998372,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 61140,
-    "end": 61300,
+    "end": 60340,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "monster.",
-    "start": 61300,
-    "end": 61780,
-    "confidence": 0.9790039,
-    "speaker": null
-  },
-  {
-    "text": "When",
-    "start": 61780,
-    "end": 62020,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "he",
-    "start": 62020,
-    "end": 62180,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "tried",
-    "start": 62180,
-    "end": 62380,
+    "text": "person",
+    "start": 60340,
+    "end": 60660,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "to",
-    "start": 62380,
-    "end": 62460,
+    "text": "can",
+    "start": 60660,
+    "end": 60940,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "pull",
-    "start": 62460,
-    "end": 62620,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 62620,
-    "end": 62740,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "plug",
-    "start": 62740,
-    "end": 62980,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "on",
-    "start": 62980,
-    "end": 63100,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 63100,
-    "end": 63220,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "spending",
-    "start": 63220,
-    "end": 63540,
-    "confidence": 0.99820966,
-    "speaker": null
-  },
-  {
-    "text": "Hitler,",
-    "start": 63540,
-    "end": 63810,
-    "confidence": 0.76904297,
-    "speaker": null
-  },
-  {
-    "text": "Hitler",
-    "start": 63880,
-    "end": 64160,
-    "confidence": 0.9946289,
-    "speaker": null
-  },
-  {
-    "text": "fired",
-    "start": 64160,
-    "end": 64440,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "him.",
-    "start": 64440,
-    "end": 64640,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "In",
-    "start": 64640,
-    "end": 64880,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 64880,
-    "end": 65040,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "final",
-    "start": 65040,
-    "end": 65320,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "cinematic",
-    "start": 65320,
-    "end": 66040,
-    "confidence": 0.9944336,
-    "speaker": null
-  },
-  {
-    "text": "twist,",
-    "start": 66040,
-    "end": 66400,
-    "confidence": 0.99975586,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 66400,
-    "end": 66640,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "man",
-    "start": 66640,
-    "end": 66840,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "who",
-    "start": 66840,
-    "end": 67040,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "funded",
-    "start": 67040,
-    "end": 67360,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 67360,
-    "end": 67520,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "Third",
-    "start": 67520,
-    "end": 67680,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "Reich",
-    "start": 67680,
-    "end": 68120,
-    "confidence": 0.7055664,
-    "speaker": null
-  },
-  {
-    "text": "joined",
-    "start": 68120,
-    "end": 68480,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 68480,
-    "end": 68600,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "Resistance.",
-    "start": 68600,
-    "end": 69200,
-    "confidence": 0.8688151,
-    "speaker": null
-  },
-  {
-    "text": "He",
-    "start": 69200,
-    "end": 69440,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "was",
-    "start": 69440,
-    "end": 69560,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "involved",
-    "start": 69560,
-    "end": 69840,
-    "confidence": 0.9831543,
-    "speaker": null
-  },
-  {
-    "text": "in",
-    "start": 69840,
-    "end": 70000,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 70000,
-    "end": 70120,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "plot",
-    "start": 70120,
-    "end": 70320,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "to",
-    "start": 70320,
-    "end": 70480,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "assassinate",
-    "start": 70480,
-    "end": 71120,
+    "text": "confront",
+    "start": 60940,
+    "end": 61340,
     "confidence": 0.9998779,
     "speaker": null
   },
   {
-    "text": "Hitler",
-    "start": 71120,
-    "end": 71480,
-    "confidence": 1,
+    "text": "evil",
+    "start": 61340,
+    "end": 61700,
+    "confidence": 0.7963867,
     "speaker": null
   },
   {
     "text": "and",
-    "start": 71480,
-    "end": 71640,
+    "start": 61700,
+    "end": 61940,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "was",
-    "start": 71640,
-    "end": 71800,
+    "text": "still",
+    "start": 61940,
+    "end": 62180,
+    "confidence": 1,
+    "speaker": null
+  },
+  {
+    "text": "choose",
+    "start": 62180,
+    "end": 62540,
     "confidence": 0.9995117,
     "speaker": null
   },
   {
-    "text": "sent",
-    "start": 71800,
-    "end": 72000,
+    "text": "humanity",
+    "start": 62540,
+    "end": 63180,
     "confidence": 1,
     "speaker": null
   },
   {
-    "text": "to",
-    "start": 72000,
-    "end": 72160,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 72160,
-    "end": 72320,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "concentration",
-    "start": 72320,
-    "end": 72880,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "camp",
-    "start": 72880,
-    "end": 73160,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "as",
-    "start": 73160,
-    "end": 73360,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 73360,
-    "end": 73520,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "prisoner.",
-    "start": 73520,
-    "end": 73960,
-    "confidence": 0.9998372,
-    "speaker": null
-  },
-  {
-    "text": "At",
-    "start": 73960,
-    "end": 74120,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 74120,
-    "end": 74240,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "Nuremberg",
-    "start": 74240,
-    "end": 74800,
-    "confidence": 0.82543945,
-    "speaker": null
-  },
-  {
-    "text": "trials,",
-    "start": 74800,
-    "end": 75280,
-    "confidence": 0.9967448,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 75280,
-    "end": 75440,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "world",
-    "start": 75440,
-    "end": 75680,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "tried",
-    "start": 75680,
-    "end": 76000,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "to",
-    "start": 76000,
-    "end": 76120,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "hang",
-    "start": 76120,
-    "end": 76320,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "him.",
-    "start": 76320,
-    "end": 76520,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "But",
-    "start": 76520,
-    "end": 76720,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "Schacht",
-    "start": 76720,
-    "end": 77200,
-    "confidence": 0.81070966,
-    "speaker": null
-  },
-  {
-    "text": "was",
-    "start": 77200,
-    "end": 77360,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "too",
-    "start": 77360,
-    "end": 77520,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "clever.",
-    "start": 77520,
-    "end": 77840,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "He",
-    "start": 77840,
-    "end": 78080,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "argued",
-    "start": 78080,
-    "end": 78480,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "that",
-    "start": 78480,
-    "end": 78600,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "he",
-    "start": 78600,
-    "end": 78720,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "only",
-    "start": 78720,
-    "end": 78920,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "wanted",
-    "start": 78920,
-    "end": 79280,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "to",
-    "start": 79280,
-    "end": 79440,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "save",
-    "start": 79440,
-    "end": 79640,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 79640,
-    "end": 79799,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "German",
-    "start": 79799,
-    "end": 80119,
-    "confidence": 0.99658203,
-    "speaker": null
-  },
-  {
-    "text": "economy,",
-    "start": 80119,
-    "end": 80440,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "not",
-    "start": 80600,
-    "end": 80920,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "start",
-    "start": 80920,
-    "end": 81160,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 81160,
-    "end": 81360,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "war.",
-    "start": 81360,
-    "end": 81640,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "He",
-    "start": 81640,
-    "end": 81880,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "was",
-    "start": 81880,
-    "end": 82000,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "acquitted,",
-    "start": 82000,
-    "end": 82440,
-    "confidence": 0.9996338,
-    "speaker": null
-  },
-  {
-    "text": "while",
-    "start": 82440,
-    "end": 82600,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "his",
-    "start": 82600,
-    "end": 82800,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "former",
-    "start": 82800,
-    "end": 83080,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "colleagues",
-    "start": 83080,
-    "end": 83600,
-    "confidence": 0.9998372,
-    "speaker": null
-  },
-  {
-    "text": "were",
-    "start": 83600,
-    "end": 83760,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "sent",
-    "start": 83760,
-    "end": 83920,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "to",
-    "start": 83920,
-    "end": 84080,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 84080,
-    "end": 84240,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "gallows.",
-    "start": 84240,
-    "end": 84800,
-    "confidence": 0.9727783,
-    "speaker": null
-  },
-  {
-    "text": "He",
-    "start": 84800,
-    "end": 85040,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "died",
-    "start": 85040,
-    "end": 85280,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "a",
-    "start": 85280,
-    "end": 85440,
-    "confidence": 0.9975586,
-    "speaker": null
-  },
-  {
-    "text": "free",
-    "start": 85440,
-    "end": 85640,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "man",
-    "start": 85640,
-    "end": 85880,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "in",
-    "start": 85880,
-    "end": 86080,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "1970,",
-    "start": 86080,
-    "end": 86840,
-    "confidence": 0.99927,
-    "speaker": null
-  },
-  {
-    "text": "having",
-    "start": 86920,
-    "end": 87280,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "served",
-    "start": 87280,
-    "end": 87600,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "as",
-    "start": 87600,
-    "end": 87800,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 87800,
-    "end": 88000,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "hidden",
-    "start": 88000,
-    "end": 88320,
-    "confidence": 0.89038086,
-    "speaker": null
-  },
-  {
-    "text": "architect",
-    "start": 88320,
-    "end": 88800,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "of",
-    "start": 88800,
-    "end": 88920,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 88920,
-    "end": 89080,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "20th",
-    "start": 89080,
-    "end": 89520,
-    "confidence": 0.99963,
-    "speaker": null
-  },
-  {
-    "text": "century.",
-    "start": 89520,
-    "end": 89880,
-    "confidence": 0.83935547,
-    "speaker": null
-  },
-  {
-    "text": "We",
-    "start": 89960,
-    "end": 90240,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "remember",
-    "start": 90240,
-    "end": 90560,
-    "confidence": 0.99975586,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 90560,
-    "end": 90720,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "dictators",
-    "start": 90720,
-    "end": 91240,
+    "text": "everywhere,",
+    "start": 63180,
+    "end": 63810,
     "confidence": 0.9996745,
     "speaker": null
   },
   {
-    "text": "and",
-    "start": 91240,
-    "end": 91440,
-    "confidence": 0.99853516,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 91440,
-    "end": 91600,
-    "confidence": 0.99902344,
-    "speaker": null
-  },
-  {
-    "text": "generals,",
-    "start": 91600,
-    "end": 92040,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "but",
-    "start": 92040,
-    "end": 92240,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "we've",
-    "start": 92240,
-    "end": 92440,
-    "confidence": 0.9920247,
-    "speaker": null
-  },
-  {
-    "text": "forgotten",
-    "start": 92440,
-    "end": 92840,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 92840,
-    "end": 92960,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "man",
-    "start": 92960,
-    "end": 93160,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "who",
-    "start": 93160,
-    "end": 93360,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "wrote",
-    "start": 93360,
-    "end": 93560,
-    "confidence": 1,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 93560,
-    "end": 93680,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "checks.",
-    "start": 93680,
-    "end": 94200,
-    "confidence": 0.94433594,
-    "speaker": null
-  },
-  {
-    "text": "Hjalmar",
-    "start": 94270,
-    "end": 94790,
-    "confidence": 0.9963867,
-    "speaker": null
-  },
-  {
-    "text": "shocked,",
-    "start": 94790,
-    "end": 95230,
-    "confidence": 0.94222003,
-    "speaker": null
-  },
-  {
-    "text": "the",
-    "start": 95230,
-    "end": 95430,
-    "confidence": 0.99560547,
-    "speaker": null
-  },
-  {
-    "text": "black",
-    "start": 95430,
-    "end": 95630,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "wizard",
-    "start": 95630,
-    "end": 96070,
-    "confidence": 0.9938151,
-    "speaker": null
-  },
-  {
-    "text": "of",
-    "start": 96070,
-    "end": 96270,
-    "confidence": 0.9995117,
-    "speaker": null
-  },
-  {
-    "text": "finance.",
-    "start": 96270,
-    "end": 96830,
-    "confidence": 0.9968262,
+    "text": "forever.",
+    "start": 64040,
+    "end": 64360,
+    "confidence": 0.9921875,
     "speaker": null
   }
 ]
