@@ -18,27 +18,6 @@ const FPS = 30;
 const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
 const SCENES = generateScenes(subtitles);
 
-/* ─────────────── CINEMATIC LETTERBOX ─────────────── */
-
-const Letterbox = () => (
-    <>
-        <div style={{
-            position: "absolute",
-            top: 0, left: 0, right: 0,
-            height: 60,
-            background: "black",
-            zIndex: 100,
-        }} />
-        <div style={{
-            position: "absolute",
-            bottom: 0, left: 0, right: 0,
-            height: 60,
-            background: "black",
-            zIndex: 100,
-        }} />
-    </>
-);
-
 /* ─────────────── FILM GRAIN OVERLAY ─────────────── */
 
 const FilmGrain = () => {
@@ -274,24 +253,6 @@ const Captions = () => {
     );
 };
 
-/* ─────────────── SCAN LINE ─────────────── */
-
-const ScanLine = () => {
-    const frame = useCurrentFrame();
-    const y = interpolate(frame % 60, [0, 60], [-5, 105]);
-    return (
-        <div style={{
-            position: "absolute",
-            left: 0, right: 0,
-            top: `${y}%`,
-            height: 2,
-            background: "linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent)",
-            zIndex: 55,
-            pointerEvents: "none",
-        }} />
-    );
-};
-
 /* ─────────────── MAIN ─────────────── */
 
 export const MyComposition = () => {
@@ -309,23 +270,12 @@ export const MyComposition = () => {
                 mixBlendMode: "multiply",
             }} />
 
-            {/* Subtle horizontal scan lines texture */}
-            <div style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 25,
-                backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px)",
-                pointerEvents: "none",
-            }} />
-
-            <ScanLine />
             <FilmGrain />
-            <Letterbox />
 
             <Audio src={staticFile("audio/script.mp3")} />
             <Audio src={staticFile("audio/bgmusic3.mp3")} volume={0.25} loop />
 
-            {/* Captions sit ABOVE letterbox via zIndex */}
+            {/* Captions sit ABOVE everything */}
             <div style={{ position: "absolute", inset: 0, zIndex: 110 }}>
                 <Captions />
             </div>
