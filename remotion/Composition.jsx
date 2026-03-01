@@ -17,6 +17,7 @@ import { generateScenes } from "../videoData/imagePromptData";
 const FPS = 30;
 const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
 const SCENES = generateScenes(subtitles);
+console.log(SCENES)
 
 /* ─────────────── FILM GRAIN OVERLAY ─────────────── */
 
@@ -241,7 +242,7 @@ const Captions = () => {
                 )}
                 <div
                     style={{
-                        color: "red",
+                        color: "#7A1F1D",
                         WebkitTextStroke: "1.4px rgba(0,0,0,1)",
                         transform: `scale(${pop})`,
                     }}
@@ -273,7 +274,7 @@ export const MyComposition = () => {
             <FilmGrain />
 
             <Audio src={staticFile("audio/script.mp3")} />
-            <Audio src={staticFile("audio/bgmusic3.mp3")} volume={0.25} loop />
+            <Audio src={staticFile("audio/bgmusic2.mp3")} volume={0.25} loop />
 
             {/* Captions sit ABOVE everything */}
             <div style={{ position: "absolute", inset: 0, zIndex: 110 }}>
