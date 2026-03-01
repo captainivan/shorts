@@ -7,6 +7,7 @@ import {
 	interpolate,
 	Easing,
 	staticFile,
+	useVideoConfig,
 } from "remotion";
 
 import "./remotion.css";
@@ -79,6 +80,8 @@ const SceneImage = ({ sceneNumber, duration, mode }) => {
 };
 
 const Scenes = () => {
+	const { durationInFrames } = useVideoConfig();
+
 	return (
 		<>
 			{SCENES.map((scene, i) => {
@@ -88,7 +91,13 @@ const Scenes = () => {
 				if (!startWord || !endWord) return null;
 
 				const startFrame = msToFrames(startWord.start);
-				const endFrame = msToFrames(endWord.end);
+				let endFrame = msToFrames(endWord.end);
+
+				// ✅ IF LAST SCENE → extend till video end
+				if (i === SCENES.length - 1) {
+					endFrame = durationInFrames;
+				}
+
 				const duration = endFrame - startFrame;
 
 				return (
