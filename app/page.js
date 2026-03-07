@@ -16,7 +16,7 @@ export default function Home() {
       <Player
         controls={true}
         component={MyComposition}
-        durationInFrames={1640}
+        durationInFrames={2880}
         compositionWidth={1080}
         compositionHeight={1920}
         fps={30}

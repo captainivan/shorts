@@ -1,5 +1,3 @@
-// VERSION 2 (two)
-
 import {
     AbsoluteFill,
     Audio,
@@ -10,16 +8,34 @@ import {
     Easing,
     staticFile,
     useVideoConfig,
+    delayRender,
+    continueRender,
 } from "remotion";
 
 import "./remotion.css";
-import subtitles from "../subtitle/subtitle.json";
-import { generateScenes } from "../videoData/imagePromptData";
 
 const FPS = 30;
 const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
-const SCENES = generateScenes(subtitles);
-console.log(SCENES);
+
+// ✅ Cache bust once
+const CACHE_BUST = Date.now();
+
+// ✅ Remotion will wait for data before rendering
+let subtitles = [];
+let SCENES = [];
+
+const handle = delayRender();
+
+const loadData = async () => {
+    const [subRes, sceneRes] = await Promise.all([
+        fetch(`https://ik.imagekit.io/ilunarivanthesecond/subtitles.json?updatedAt=${CACHE_BUST}`),
+        fetch(`https://ik.imagekit.io/ilunarivanthesecond/imagePrompts.json?updatedAt=${CACHE_BUST}`)
+    ]);
+    subtitles = await subRes.json();
+    SCENES = await sceneRes.json();
+    continueRender(handle);
+};
+loadData();
 
 /* ─────────────── UTILS ─────────────── */
 
@@ -29,7 +45,7 @@ const seededRandom = (seed) => {
 };
 
 /* ═══════════════════════════════════════════════
-   VIDEO EFFECTS  ← VERSION 2 only
+   VIDEO EFFECTS
 ═══════════════════════════════════════════════ */
 
 /* ── FILM GRAIN ── */
@@ -100,7 +116,7 @@ const ChromaFlash = ({ duration }) => {
     );
 };
 
-/* ── SCENE IMAGE — Version 2 motion + grades ── */
+/* ── SCENE IMAGE ── */
 const SceneImage = ({ sceneNumber, duration, mode }) => {
     const frame = useCurrentFrame();
 
@@ -108,13 +124,11 @@ const SceneImage = ({ sceneNumber, duration, mode }) => {
         extrapolateRight: "clamp",
     });
 
-    // Dramatic punch-in
     const punch = interpolate(frame, [0, 12], [1.25, 1], {
         easing: Easing.out(Easing.cubic),
         extrapolateRight: "clamp",
     });
 
-    // Slow cinematic drift — alternating directions
     const driftX =
         mode % 4 === 0 ? interpolate(progress, [0, 1], [-40, 40]) :
         mode % 4 === 1 ? interpolate(progress, [0, 1], [40, -40]) :
@@ -126,13 +140,10 @@ const SceneImage = ({ sceneNumber, duration, mode }) => {
         mode % 3 === 1 ? interpolate(progress, [0, 1], [-20, 20]) :
                           0;
 
-    // Slow breathe scale
     const scale = interpolate(progress, [0, 0.5, 1], [1.05, 1.12, 1.07]);
 
-    // Motion blur on entry
     const blur = interpolate(frame, [0, 8], [10, 0], { extrapolateRight: "clamp" });
 
-    // Colour grade — alternates warm/cool
     const warmth = mode % 2 === 0
         ? "sepia(0.18) saturate(1.4) contrast(1.15) brightness(0.9)"
         : "hue-rotate(10deg) saturate(1.3) contrast(1.18) brightness(0.85)";
@@ -140,7 +151,7 @@ const SceneImage = ({ sceneNumber, duration, mode }) => {
     return (
         <AbsoluteFill>
             <Img
-                src={staticFile(`/image/${sceneNumber}.jpeg`)}
+                src={`https://ik.imagekit.io/ilunarivanthesecond/images/${sceneNumber}.jpg?updatedAt=${CACHE_BUST}`} // ✅ uses constant
                 style={{
                     width: "100%",
                     height: "100%",
@@ -195,8 +206,7 @@ const Scenes = () => {
 };
 
 /* ═══════════════════════════════════════════════
-   CAPTIONS  ← VERSION 1 only
-   accent colors · glow · bounce · slide-up · italic · uppercase
+   CAPTIONS
 ═══════════════════════════════════════════════ */
 
 const ACCENT_COLORS = ["#FF3C3C", "#FFD700", "#00E5FF", "#FF6EC7", "#7FFF00"];
@@ -216,7 +226,6 @@ const Captions = () => {
     const prevWord = subtitles[index - 1];
     const currentWord = subtitles[index];
 
-    // Pop / bounce scale
     const pop = interpolate(
         frame,
         [msToFrames(currentWord.start), msToFrames(currentWord.start) + 6],
@@ -224,7 +233,6 @@ const Captions = () => {
         { easing: Easing.out(Easing.back(2)), extrapolateRight: "clamp" }
     );
 
-    // Slide-up entry
     const slideY = interpolate(
         frame,
         [msToFrames(currentWord.start), msToFrames(currentWord.start) + 8],
@@ -232,7 +240,6 @@ const Captions = () => {
         { easing: Easing.out(Easing.cubic), extrapolateRight: "clamp" }
     );
 
-    // Subtle shake on word change
     const wordShakeX = interpolate(
         frame,
         [msToFrames(currentWord.start), msToFrames(currentWord.start) + 3],
@@ -240,7 +247,6 @@ const Captions = () => {
         { extrapolateRight: "clamp" }
     );
 
-    // Glow pulse on current word
     const glowPulse = interpolate(
         frame,
         [msToFrames(currentWord.start), msToFrames(currentWord.start) + 15],
@@ -261,7 +267,6 @@ const Captions = () => {
                 alignItems: "center",
                 gap: 8,
             }}>
-                {/* Previous word — faded */}
                 {prevWord && (
                     <div style={{
                         fontSize: 88,
@@ -277,7 +282,6 @@ const Captions = () => {
                     </div>
                 )}
 
-                {/* Current word — big energy */}
                 <div style={{
                     fontSize: 112,
                     fontWeight: 900,
@@ -306,10 +310,8 @@ export const MyComposition = () => {
     return (
         <AbsoluteFill style={{ backgroundColor: "black", overflow: "hidden" }}>
 
-            {/* ── Scene images — Version 2 effects ── */}
             <Scenes />
 
-            {/* ── Cinema LUT — Version 2 ── */}
             <div style={{
                 position: "absolute",
                 inset: 0,
@@ -319,14 +321,11 @@ export const MyComposition = () => {
                 mixBlendMode: "multiply",
             }} />
 
-            {/* ── Film grain — Version 2 ── */}
             <FilmGrain />
 
-            {/* ── Audio ── */}
-            <Audio src={staticFile("audio/script.mp3")} />
+            <Audio src={`https://ik.imagekit.io/ilunarivanthesecond/audio.mp3?updatedAt=${CACHE_BUST}`} />
             <Audio src={staticFile("audio/bgmusic2.mp3")} volume={0.25} loop />
 
-            {/* ── Captions — Version 1 style ── */}
             <div style={{ position: "absolute", inset: 0, zIndex: 110 }}>
                 <Captions />
             </div>
