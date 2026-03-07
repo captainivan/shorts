@@ -1,3 +1,5 @@
+// VERSION 2
+
 import {
     AbsoluteFill,
     Audio,
