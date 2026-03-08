@@ -217,7 +217,7 @@ export const MyComposition = ({
         return (
             <AbsoluteFill>
                 <Img
-                    src={`https://ik.imagekit.io/ilunarivanthesecond/images/${sceneNumber}.jpg`}
+                    src={`https://ik.imagekit.io/ilunarivanthesecond/images/${sceneNumber}.jpg?updatedAt=${Date.now()}`}
                     style={{
                         width: "100%",
                         height: "100%",
