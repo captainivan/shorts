@@ -318,7 +318,13 @@ export const MyComposition = ({
             >
                 <div style={{ textAlign: "center" }}>
                     {prevWord && (
-                        <div style={{ fontSize: 88, color: "rgba(255,255,255,0.55)", fontFamily: "MyFont" }}>
+                        <div style={{
+                            fontSize: 88,
+                            color: "rgba(255,255,255,0.55)",
+                            fontFamily: "MyFont",
+                            WebkitTextStroke: "3px black",
+                            textShadow: "0 0 10px rgba(0,0,0,0.8)",
+                        }}>
                             {prevWord.text}
                         </div>
                     )}
@@ -330,7 +336,9 @@ export const MyComposition = ({
                             color: accentColor,
                             transform: `scale(${pop}) translateY(${slideY}px)`,
                             textTransform: "uppercase",
-                            fontFamily: "MyFont"
+                            fontFamily: "MyFont",
+                            WebkitTextStroke: "3px black",
+                            textShadow: "0 0 10px rgba(0,0,0,0.8)",
                         }}
                     >
                         {currentWord.text}
