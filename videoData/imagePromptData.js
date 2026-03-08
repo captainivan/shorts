@@ -1,6 +1,5 @@
 export function generateScenes(subtitles) {
     const scenes = [];
-    if (!subtitles.length) return scenes;
 
     let sceneNumber = 1;
     let fromWordIndex = 0;
