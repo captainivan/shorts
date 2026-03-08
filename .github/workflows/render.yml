@@ -1,152 +1,157 @@
 name: Render Video
 
 on:
-workflow_dispatch: {}
-repository_dispatch:
-types: [run_video_render]
+  workflow_dispatch: {}
+  repository_dispatch:
+    types: [run_video_render]
 
 jobs:
-render:
-runs-on: ubuntu-latest
+  render:
+    runs-on: ubuntu-latest
 
-```
-steps:
-  # -------------------------------------------------
-  # 1. Checkout repo
-  # -------------------------------------------------
-  - name: Checkout Repo
-    uses: actions/checkout@v4
+    steps:
+      # -------------------------------------------------
+      # 1. Checkout repo
+      # -------------------------------------------------
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-  # -------------------------------------------------
-  # 2. Setup Node
-  # -------------------------------------------------
-  - name: Setup Node
-    uses: actions/setup-node@v4
-    with:
-      node-version: 20
+      # -------------------------------------------------
+      # 2. Setup Node
+      # -------------------------------------------------
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-  # -------------------------------------------------
-  # 3. Install dependencies
-  # -------------------------------------------------
-  - name: Install dependencies
-    run: npm install
+      # -------------------------------------------------
+      # 3. Install jq (for JSON parsing in shell)
+      # -------------------------------------------------
+      - name: Install jq
+        run: sudo apt-get install -y jq
 
-  # -------------------------------------------------
-  # 4. Prepare basic props
-  # -------------------------------------------------
-  - name: Prepare raw props
-    id: raw_props
-    run: |
-      RAW=$(printf '%s' \
-      "{\"audio\":\"${{ github.event.client_payload.audio }}\",\
-      \"basicData\":\"${{ github.event.client_payload.basicData }}\",\
-      \"allImageBaseUrl\":\"${{ github.event.client_payload.allImageBaseUrl }}\",\
-      \"id\":\"${{ github.event.client_payload.id }}\",\
-      \"subtitles\":\"${{ github.event.client_payload.subtitles }}\",\
-      \"imageUrls\":\"${{ github.event.client_payload.imageUrls }}\"}")
+      # -------------------------------------------------
+      # 4. Install dependencies
+      # -------------------------------------------------
+      - name: Install dependencies
+        run: npm install
 
-      echo "props=$RAW" >> $GITHUB_OUTPUT
+      # -------------------------------------------------
+      # 5. Prepare basic props
+      # -------------------------------------------------
+      - name: Prepare raw props
+        id: raw_props
+        run: |
+          RAW=$(printf '%s' \
+          "{\"audio\":\"${{ github.event.client_payload.audio }}\",\
+          \"basicData\":\"${{ github.event.client_payload.basicData }}\",\
+          \"allImageBaseUrl\":\"${{ github.event.client_payload.allImageBaseUrl }}\",\
+          \"id\":\"${{ github.event.client_payload.id }}\",\
+          \"subtitles\":\"${{ github.event.client_payload.subtitles }}\",\
+          \"imageUrls\":\"${{ github.event.client_payload.imageUrls }}\"}")
 
-  - name: Show Raw Props
-    run: echo '${{ steps.raw_props.outputs.props }}'
+          echo "props=$RAW" >> $GITHUB_OUTPUT
 
-  # -------------------------------------------------
-  # 5. Download basicData.json
-  # -------------------------------------------------
-  - name: Download basic data
-    run: |
-      BASIC_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.basicData')
-      echo "Downloading basicData.json: $BASIC_URL"
-      curl -L -o basicData.json "$BASIC_URL"
-      cat basicData.json
+      - name: Show Raw Props
+        run: echo '${{ steps.raw_props.outputs.props }}'
 
-  # -------------------------------------------------
-  # 6. Download subtitles.json
-  # -------------------------------------------------
-  - name: Download subtitles
-    run: |
-      SUB_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.subtitles')
-      echo "Downloading subtitles.json: $SUB_URL"
-      curl -L -o subtitles.json "$SUB_URL"
-      cat subtitles.json
+      # -------------------------------------------------
+      # 6. Download basicData.json
+      # -------------------------------------------------
+      - name: Download basic data
+        run: |
+          BASIC_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.basicData')
+          echo "Downloading basicData.json: $BASIC_URL"
+          curl -L -o basicData.json "$BASIC_URL"
+          cat basicData.json
 
-  # -------------------------------------------------
-  # 7. Calculate audio duration (+2 seconds)
-  # -------------------------------------------------
-  - name: Calculate Audio Duration
-    run: |
-      npm install get-audio-duration
+      # -------------------------------------------------
+      # 7. Download subtitles.json
+      # -------------------------------------------------
+      - name: Download subtitles
+        run: |
+          SUB_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.subtitles')
+          echo "Downloading subtitles.json: $SUB_URL"
+          curl -L -o subtitles.json "$SUB_URL"
+          cat subtitles.json
 
-      AUDIO_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.audio')
-      echo "Downloading audio file: $AUDIO_URL"
+      # -------------------------------------------------
+      # 8. Calculate audio duration (+2 seconds)
+      # -------------------------------------------------
+      - name: Install get-audio-duration
+        run: npm install get-audio-duration
 
-      curl -L -o audiofile.mp4 "$AUDIO_URL"
+      - name: Calculate Audio Duration
+        run: |
+          AUDIO_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.audio')
+          echo "Downloading audio file: $AUDIO_URL"
+          curl -L -o audiofile.mp4 "$AUDIO_URL"
 
-      node << 'EOF'
-      import fs from "fs";
-      import { getAudioDurationInSeconds } from "get-audio-duration";
+          cat > calc_duration.mjs << 'EOF'
+          import fs from "fs";
+          import { getAudioDurationInSeconds } from "get-audio-duration";
 
-      if (!fs.existsSync("audiofile.mp4")) {
-        console.error("❌ Audio file failed to download");
-        process.exit(1);
-      }
+          if (!fs.existsSync("audiofile.mp4")) {
+            console.error("❌ Audio file failed to download");
+            process.exit(1);
+          }
 
-      const seconds = await getAudioDurationInSeconds("audiofile.mp4");
-      const fps = 30;
+          const seconds = await getAudioDurationInSeconds("audiofile.mp4");
+          const fps = 30;
+          const durationInFrames = Math.ceil(seconds * fps) + 60;
 
-      const durationInFrames = Math.ceil(seconds * fps) + 60;
+          console.log("🎵 Audio Seconds:", seconds);
+          console.log("🎞 Frames:", durationInFrames);
 
-      console.log("🎵 Audio Seconds:", seconds);
-      console.log("🎞 Frames:", durationInFrames);
+          fs.writeFileSync(
+            "duration.json",
+            JSON.stringify({ durationInFrames, fps })
+          );
+          EOF
 
-      fs.writeFileSync(
-        "duration.json",
-        JSON.stringify({ durationInFrames, fps })
-      );
-      EOF
+          node calc_duration.mjs
 
-  - name: Show Duration
-    run: cat duration.json
+      - name: Show Duration
+        run: cat duration.json
 
-  # -------------------------------------------------
-  # 8. Build FINAL PROPS safely (Base64 encoded)
-  # -------------------------------------------------
-  - name: Prepare final props
-    id: final_props
-    run: |
-      PROPS='${{ steps.raw_props.outputs.props }}'
-      DURATION=$(cat duration.json)
-      SUBS=$(cat subtitles.json)
+      # -------------------------------------------------
+      # 9. Build FINAL PROPS safely (Base64 encoded)
+      # -------------------------------------------------
+      - name: Prepare final props
+        id: final_props
+        run: |
+          PROPS='${{ steps.raw_props.outputs.props }}'
+          DURATION=$(cat duration.json)
+          SUBS=$(cat subtitles.json)
 
-      FINAL=$(jq -n \
-        --argjson a "$PROPS" \
-        --argjson b "$DURATION" \
-        --argjson subs "$SUBS" \
-        '$a + $b + {subtitles: $subs}')
+          FINAL=$(jq -n \
+            --argjson a "$PROPS" \
+            --argjson b "$DURATION" \
+            --argjson subs "$SUBS" \
+            '$a + $b + {subtitles: $subs}')
 
-      echo "Final JSON Props:"
-      echo "$FINAL"
+          echo "Final JSON Props:"
+          echo "$FINAL"
 
-      ENCODED=$(echo "$FINAL" | base64 -w 0)
-      echo "props_b64=$ENCODED" >> $GITHUB_OUTPUT
+          ENCODED=$(echo "$FINAL" | base64 -w 0)
+          echo "props_b64=$ENCODED" >> $GITHUB_OUTPUT
 
-  # -------------------------------------------------
-  # 9. Render Remotion Video with decoded props
-  # -------------------------------------------------
-  - name: Render Video
-    run: |
-      JSON=$(echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode)
+      # -------------------------------------------------
+      # 10. Render Remotion Video with decoded props
+      # -------------------------------------------------
+      - name: Render Video
+        run: |
+          JSON=$(echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode)
 
-      npx remotion render remotion/index.js FinalVideo \
-        --props "$JSON" \
-        --output out/video.mp4
+          npx remotion render remotion/index.js FinalVideo \
+            --props "$JSON" \
+            --output out/video.mp4
 
-  # -------------------------------------------------
-  # 10. Upload video artifact
-  # -------------------------------------------------
-  - name: Upload final video
-    uses: actions/upload-artifact@v4
-    with:
-      name: final-video
-      path: out/video.mp4
-```
+      # -------------------------------------------------
+      # 11. Upload video artifact
+      # -------------------------------------------------
+      - name: Upload final video
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-video
+          path: out/video.mp4
