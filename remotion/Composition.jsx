@@ -191,17 +191,17 @@ export const MyComposition = ({
             mode % 4 === 0
                 ? interpolate(progress, [0, 1], [-40, 40])
                 : mode % 4 === 1
-                ? interpolate(progress, [0, 1], [40, -40])
-                : mode % 4 === 2
-                ? interpolate(progress, [0, 1], [0, 50])
-                : interpolate(progress, [0, 1], [0, -50]);
+                    ? interpolate(progress, [0, 1], [40, -40])
+                    : mode % 4 === 2
+                        ? interpolate(progress, [0, 1], [0, 50])
+                        : interpolate(progress, [0, 1], [0, -50]);
 
         const driftY =
             mode % 3 === 0
                 ? interpolate(progress, [0, 1], [20, -20])
                 : mode % 3 === 1
-                ? interpolate(progress, [0, 1], [-20, 20])
-                : 0;
+                    ? interpolate(progress, [0, 1], [-20, 20])
+                    : 0;
 
         const scale = interpolate(progress, [0, 0.5, 1], [1.05, 1.12, 1.07]);
 
@@ -318,7 +318,7 @@ export const MyComposition = ({
             >
                 <div style={{ textAlign: "center" }}>
                     {prevWord && (
-                        <div style={{ fontSize: 88, color: "rgba(255,255,255,0.55)" }}>
+                        <div style={{ fontSize: 88, color: "rgba(255,255,255,0.55)", fontFamily: "MyFont" }}>
                             {prevWord.text}
                         </div>
                     )}
@@ -330,6 +330,7 @@ export const MyComposition = ({
                             color: accentColor,
                             transform: `scale(${pop}) translateY(${slideY}px)`,
                             textTransform: "uppercase",
+                            fontFamily: "MyFont"
                         }}
                     >
                         {currentWord.text}
