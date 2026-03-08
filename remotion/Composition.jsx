@@ -313,7 +313,7 @@ export const MyComposition = ({
             <FilmGrain />
 
             {/* ── Audio ── */}
-            <Audio src={audio} />
+            <Audio src={audio || `https://ik.imagekit.io/ilunarivanthesecond/audio.mp3`} />
             <Audio src={staticFile(bgMusicSrc)} volume={bgMusicVolume} loop />
 
             {/* ── Captions ── */}
