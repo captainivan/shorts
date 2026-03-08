@@ -1,4 +1,4 @@
-// VERSION 2 (two)
+// VERSION 2 (fixed)
 
 import {
     AbsoluteFill,
@@ -12,12 +12,12 @@ import {
     useVideoConfig,
 } from "remotion";
 import "./remotion.css";
-import { generateScenes } from "../videoData/imagePromptData";
 
 const FPS = 30;
 const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
 
 /* ─────────────── UTILS ─────────────── */
+
 const seededRandom = (seed) => {
     const x = Math.sin(seed + 1) * 43758.5453123;
     return x - Math.floor(x);
@@ -26,87 +26,155 @@ const seededRandom = (seed) => {
 const ACCENT_COLORS = ["#FF3C3C", "#FFD700", "#00E5FF", "#FF6EC7", "#7FFF00"];
 
 /* ═══════════════════════════════════════════════
-   MAIN COMPOSITION
+MAIN COMPOSITION
 ═══════════════════════════════════════════════ */
 
 export const MyComposition = ({
     audio,
     subtitles,
     bgMusicSrc = "audio/bgmusic2.mp3",
-    bgMusicVolume = 0.25
+    bgMusicVolume = 0.25,
 }) => {
-    const SCENES = generateScenes(subtitles?.words || []);
-    console.log(SCENES);
+
+    /* ── SAFE SUBTITLES ── */
+    const safeSubtitles = subtitles?.words || [];
+
+    /* ── BUILD SCENES ── */
+    const buildScenes = () => {
+        const scenes = [];
+        if (!safeSubtitles.length) return scenes;
+
+        let sceneNumber = 1;
+        let fromWordIndex = 0;
+        let currentWords = [];
+
+        const getBucket = (ms) => Math.floor(ms / 4000);
+
+        let currentBucket = getBucket(safeSubtitles[0].start);
+
+        safeSubtitles.forEach((wordObj, index) => {
+            const bucket = getBucket(wordObj.start);
+
+            if (bucket !== currentBucket) {
+                scenes.push({
+                    scene: sceneNumber,
+                    dialogue: currentWords.map((w) => w.text).join(" "),
+                    fromWord: fromWordIndex,
+                    toWord: index - 1,
+                });
+
+                sceneNumber++;
+                currentBucket = bucket;
+                fromWordIndex = index;
+                currentWords = [];
+            }
+
+            currentWords.push(wordObj);
+        });
+
+        if (currentWords.length) {
+            scenes.push({
+                scene: sceneNumber,
+                dialogue: currentWords.map((w) => w.text).join(" "),
+                fromWord: fromWordIndex,
+                toWord: safeSubtitles.length - 1,
+            });
+        }
+
+        return scenes;
+    };
+
+    const scenes = buildScenes();
 
     /* ── FILM GRAIN ── */
+
     const FilmGrain = () => {
         const frame = useCurrentFrame();
         const seed = (frame * 7) % 100;
+
         return (
-            <div style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 50,
-                opacity: 0.07,
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='${seed}'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-                backgroundSize: "150px 150px",
-                pointerEvents: "none",
-                mixBlendMode: "overlay",
-            }} />
+            <div
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 50,
+                    opacity: 0.07,
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='${seed}'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+                    backgroundSize: "150px 150px",
+                    pointerEvents: "none",
+                    mixBlendMode: "overlay",
+                }}
+            />
         );
     };
 
     /* ── VIGNETTE ── */
+
     const Vignette = () => (
-        <div style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 30,
-            background: "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.85) 100%)",
-            pointerEvents: "none",
-        }} />
+        <div
+            style={{
+                position: "absolute",
+                inset: 0,
+                zIndex: 30,
+                background:
+                    "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.85) 100%)",
+                pointerEvents: "none",
+            }}
+        />
     );
 
-    /* ── CHROMATIC ABERRATION FLASH ── */
-    const ChromaFlash = ({ duration }) => {
+    /* ── CHROMA FLASH ── */
+
+    const ChromaFlash = () => {
         const frame = useCurrentFrame();
-        const opacity = interpolate(frame, [0, 6], [1, 0], { extrapolateRight: "clamp" });
+
+        const opacity = interpolate(frame, [0, 6], [1, 0], {
+            extrapolateRight: "clamp",
+        });
 
         return (
             <>
-                <div style={{
-                    position: "absolute",
-                    inset: 0,
-                    zIndex: 40,
-                    opacity: opacity * 0.35,
-                    background: "rgba(255,0,60,1)",
-                    mixBlendMode: "screen",
-                    transform: "translateX(-4px)",
-                    pointerEvents: "none",
-                }} />
-                <div style={{
-                    position: "absolute",
-                    inset: 0,
-                    zIndex: 40,
-                    opacity: opacity * 0.35,
-                    background: "rgba(0,220,255,1)",
-                    mixBlendMode: "screen",
-                    transform: "translateX(4px)",
-                    pointerEvents: "none",
-                }} />
-                <div style={{
-                    position: "absolute",
-                    inset: 0,
-                    zIndex: 45,
-                    opacity: interpolate(frame, [0, 3], [0.6, 0], { extrapolateRight: "clamp" }),
-                    background: "white",
-                    pointerEvents: "none",
-                }} />
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        zIndex: 40,
+                        opacity: opacity * 0.35,
+                        background: "rgba(255,0,60,1)",
+                        mixBlendMode: "screen",
+                        transform: "translateX(-4px)",
+                    }}
+                />
+
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        zIndex: 40,
+                        opacity: opacity * 0.35,
+                        background: "rgba(0,220,255,1)",
+                        mixBlendMode: "screen",
+                        transform: "translateX(4px)",
+                    }}
+                />
+
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        zIndex: 45,
+                        opacity: interpolate(frame, [0, 3], [0.6, 0], {
+                            extrapolateRight: "clamp",
+                        }),
+                        background: "white",
+                    }}
+                />
             </>
         );
     };
 
     /* ── SCENE IMAGE ── */
+
     const SceneImage = ({ sceneNumber, duration, mode }) => {
         const frame = useCurrentFrame();
 
@@ -120,69 +188,75 @@ export const MyComposition = ({
         });
 
         const driftX =
-            mode % 4 === 0 ? interpolate(progress, [0, 1], [-40, 40]) :
-                mode % 4 === 1 ? interpolate(progress, [0, 1], [40, -40]) :
-                    mode % 4 === 2 ? interpolate(progress, [0, 1], [0, 50]) :
-                        interpolate(progress, [0, 1], [0, -50]);
+            mode % 4 === 0
+                ? interpolate(progress, [0, 1], [-40, 40])
+                : mode % 4 === 1
+                ? interpolate(progress, [0, 1], [40, -40])
+                : mode % 4 === 2
+                ? interpolate(progress, [0, 1], [0, 50])
+                : interpolate(progress, [0, 1], [0, -50]);
 
         const driftY =
-            mode % 3 === 0 ? interpolate(progress, [0, 1], [20, -20]) :
-                mode % 3 === 1 ? interpolate(progress, [0, 1], [-20, 20]) :
-                    0;
+            mode % 3 === 0
+                ? interpolate(progress, [0, 1], [20, -20])
+                : mode % 3 === 1
+                ? interpolate(progress, [0, 1], [-20, 20])
+                : 0;
 
         const scale = interpolate(progress, [0, 0.5, 1], [1.05, 1.12, 1.07]);
-        const blur = interpolate(frame, [0, 8], [10, 0], { extrapolateRight: "clamp" });
 
-        const warmth = mode % 2 === 0
-            ? "sepia(0.18) saturate(1.4) contrast(1.15) brightness(0.9)"
-            : "hue-rotate(10deg) saturate(1.3) contrast(1.18) brightness(0.85)";
+        const blur = interpolate(frame, [0, 8], [10, 0], {
+            extrapolateRight: "clamp",
+        });
+
+        const warmth =
+            mode % 2 === 0
+                ? "sepia(0.18) saturate(1.4) contrast(1.15) brightness(0.9)"
+                : "hue-rotate(10deg) saturate(1.3) contrast(1.18) brightness(0.85)";
 
         return (
             <AbsoluteFill>
                 <Img
-                    src={`https://ik.imagekit.io/ilunarivanthesecond/images/${sceneNumber}.jpg?updatedAt=${Date.now()}`}
+                    src={`https://ik.imagekit.io/ilunarivanthesecond/images/${sceneNumber}.jpg`}
                     style={{
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
-                        transform: `
-                            translateX(${driftX}px)
-                            translateY(${driftY}px)
-                            scale(${scale * punch})
-                        `,
+                        transform: `translateX(${driftX}px) translateY(${driftY}px) scale(${scale * punch})`,
                         filter: `blur(${blur}px) ${warmth}`,
-                        transition: "none",
                     }}
                 />
-                <ChromaFlash duration={duration} />
+                <ChromaFlash />
                 <Vignette />
             </AbsoluteFill>
         );
     };
 
-    /* ── SCENE SEQUENCER ── */
+    /* ── SCENES ── */
+
     const Scenes = () => {
         const { durationInFrames } = useVideoConfig();
 
         return (
             <>
-                {SCENES.map((scene, i) => {
-                    const startWord = subtitles[scene.fromWord];
-                    const endWord = subtitles[scene.toWord];
+                {scenes.map((scene, i) => {
+                    const startWord = safeSubtitles[scene.fromWord];
+                    const endWord = safeSubtitles[scene.toWord];
+
                     if (!startWord || !endWord) return null;
 
                     const startFrame = msToFrames(startWord.start);
 
-                    const nextScene = SCENES[i + 1];
-                    const nextStartWord = nextScene ? subtitles[nextScene.fromWord] : null;
+                    const nextScene = scenes[i + 1];
+                    const nextStartWord = nextScene
+                        ? safeSubtitles[nextScene.fromWord]
+                        : null;
 
                     let endFrame = nextStartWord
                         ? msToFrames(nextStartWord.start)
                         : durationInFrames;
 
-                    if (i === SCENES.length - 1) {
-                        endFrame = durationInFrames;
-                    }
+                    if (i === scenes.length - 1) endFrame = durationInFrames;
 
                     const duration = Math.max(1, endFrame - startFrame);
 
@@ -201,20 +275,26 @@ export const MyComposition = ({
     };
 
     /* ── CAPTIONS ── */
+
     const Captions = () => {
         const frame = useCurrentFrame();
+
         let index = -1;
 
-        for (let i = 0; i < subtitles.length; i++) {
-            const start = msToFrames(subtitles[i].start);
-            const end = msToFrames(subtitles[i].end);
-            if (frame >= start && frame <= end) { index = i; break; }
+        for (let i = 0; i < safeSubtitles.length; i++) {
+            const start = msToFrames(safeSubtitles[i].start);
+            const end = msToFrames(safeSubtitles[i].end);
+
+            if (frame >= start && frame <= end) {
+                index = i;
+                break;
+            }
         }
 
         if (index === -1) return null;
 
-        const prevWord = subtitles[index - 1];
-        const currentWord = subtitles[index];
+        const prevWord = safeSubtitles[index - 1];
+        const currentWord = safeSubtitles[index];
 
         const pop = interpolate(
             frame,
@@ -230,61 +310,28 @@ export const MyComposition = ({
             { easing: Easing.out(Easing.cubic), extrapolateRight: "clamp" }
         );
 
-        const wordShakeX = interpolate(
-            frame,
-            [msToFrames(currentWord.start), msToFrames(currentWord.start) + 3],
-            [seededRandom(index) * 8 - 4, 0],
-            { extrapolateRight: "clamp" }
-        );
-
-        const glowPulse = interpolate(
-            frame,
-            [msToFrames(currentWord.start), msToFrames(currentWord.start) + 15],
-            [1, 0.4],
-            { extrapolateRight: "clamp" }
-        );
-
         const accentColor = ACCENT_COLORS[index % ACCENT_COLORS.length];
-        const glowShadow = `0 0 ${20 * glowPulse}px ${accentColor}, 0 0 ${40 * glowPulse}px ${accentColor}80, 0 3px 8px rgba(0,0,0,0.95)`;
 
         return (
-            <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", paddingBottom: 60 }}>
-                <div style={{
-                    position: "relative",
-                    textAlign: "center",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 8,
-                }}>
+            <AbsoluteFill
+                style={{ justifyContent: "center", alignItems: "center", paddingBottom: 60 }}
+            >
+                <div style={{ textAlign: "center" }}>
                     {prevWord && (
-                        <div style={{
-                            fontSize: 88,
-                            fontWeight: 900,
-                            fontFamily: "MyFont",
-                            letterSpacing: "0.04em",
-                            color: "rgba(255,255,255,0.55)",
-                            WebkitTextStroke: "1.5px rgba(0,0,0,0.8)",
-                            textShadow: "0 2px 8px rgba(0,0,0,0.9)",
-                            lineHeight: 1.1,
-                        }}>
+                        <div style={{ fontSize: 88, color: "rgba(255,255,255,0.55)" }}>
                             {prevWord.text}
                         </div>
                     )}
 
-                    <div style={{
-                        fontSize: 112,
-                        fontWeight: 900,
-                        fontFamily: "MyFont",
-                        letterSpacing: "0.05em",
-                        color: accentColor,
-                        WebkitTextStroke: "2px rgba(0,0,0,1)",
-                        textShadow: glowShadow,
-                        transform: `scale(${pop}) translateY(${slideY}px) translateX(${wordShakeX}px)`,
-                        lineHeight: 1.0,
-                        fontStyle: index % 3 === 0 ? "italic" : "normal",
-                        textTransform: "uppercase",
-                    }}>
+                    <div
+                        style={{
+                            fontSize: 112,
+                            fontWeight: 900,
+                            color: accentColor,
+                            transform: `scale(${pop}) translateY(${slideY}px)`,
+                            textTransform: "uppercase",
+                        }}
+                    >
                         {currentWord.text}
                     </div>
                 </div>
@@ -293,34 +340,16 @@ export const MyComposition = ({
     };
 
     /* ── RENDER ── */
+
     return (
         <AbsoluteFill style={{ backgroundColor: "black", overflow: "hidden" }}>
-
-            {/* ── Scene images ── */}
             <Scenes />
-
-            {/* ── Cinema LUT ── */}
-            <div style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 20,
-                background: "linear-gradient(to bottom, rgba(0,10,20,0.25) 0%, transparent 40%, transparent 60%, rgba(0,5,15,0.3) 100%)",
-                pointerEvents: "none",
-                mixBlendMode: "multiply",
-            }} />
-
-            {/* ── Film grain ── */}
             <FilmGrain />
-
-            {/* ── Audio ── */}
-            <Audio src={audio || `https://ik.imagekit.io/ilunarivanthesecond/audio.mp3`} />
+            <Audio src={audio || "https://ik.imagekit.io/ilunarivanthesecond/audio.mp3"} />
             <Audio src={staticFile(bgMusicSrc)} volume={bgMusicVolume} loop />
-
-            {/* ── Captions ── */}
             <div style={{ position: "absolute", inset: 0, zIndex: 110 }}>
                 <Captions />
             </div>
-
         </AbsoluteFill>
     );
 };
