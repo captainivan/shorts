@@ -2,6 +2,7 @@
 
 export async function GET() {
     try {
+        console.log("go on");
         const payLoad = {
             id: 'demo-123',
             allImageBaseUrl: `https://ik.imagekit.io/ilunarivanthesecond/images`,
