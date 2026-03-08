@@ -1,15 +1,15 @@
-import React from "react";
-import { Composition } from "remotion";
+import { Composition, getInputProps } from "remotion";
 import { MyComposition } from "./Composition.jsx";
 
 const RemotionRoot = () => {
+  const { durationInFrames, fps } = getInputProps();
   return (
     <>
       <Composition
-        id="Empty"
+        id="FinalVideo"
         component={MyComposition}
-        durationInFrames={2450}
-        fps={30}
+        durationInFrames={durationInFrames ?? 3000}
+        fps={fps ?? 30}
         width={1080}
         height={1920}
       />

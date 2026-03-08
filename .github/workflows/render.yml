@@ -1,39 +1,152 @@
-name: Render Remotion Short
+name: Render Video
 
 on:
-  workflow_dispatch:
+workflow_dispatch: {}
+repository_dispatch:
+types: [run_video_render]
 
 jobs:
-  render:
-    runs-on: ubuntu-latest
+render:
+runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+```
+steps:
+  # -------------------------------------------------
+  # 1. Checkout repo
+  # -------------------------------------------------
+  - name: Checkout Repo
+    uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
+  # -------------------------------------------------
+  # 2. Setup Node
+  # -------------------------------------------------
+  - name: Setup Node
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
 
-      - name: Install dependencies
-        run: npm install
+  # -------------------------------------------------
+  # 3. Install dependencies
+  # -------------------------------------------------
+  - name: Install dependencies
+    run: npm install
 
-      - name: Install Remotion
-        run: npm install -g remotion
+  # -------------------------------------------------
+  # 4. Prepare basic props
+  # -------------------------------------------------
+  - name: Prepare raw props
+    id: raw_props
+    run: |
+      RAW=$(printf '%s' \
+      "{\"audio\":\"${{ github.event.client_payload.audio }}\",\
+      \"basicData\":\"${{ github.event.client_payload.basicData }}\",\
+      \"allImageBaseUrl\":\"${{ github.event.client_payload.allImageBaseUrl }}\",\
+      \"id\":\"${{ github.event.client_payload.id }}\",\
+      \"subtitles\":\"${{ github.event.client_payload.subtitles }}\",\
+      \"imageUrls\":\"${{ github.event.client_payload.imageUrls }}\"}")
 
-      - name: Render video
-        run: |
-          npx remotion render \
-            remotion/index.js \
-            Empty \
-            out/video.mp4 \
-            --codec=h264 \
-            --overwrite
+      echo "props=$RAW" >> $GITHUB_OUTPUT
 
-      - name: Upload rendered video
-        uses: actions/upload-artifact@v4
-        with:
-          name: remotion-video
-          path: out/video.mp4
+  - name: Show Raw Props
+    run: echo '${{ steps.raw_props.outputs.props }}'
+
+  # -------------------------------------------------
+  # 5. Download basicData.json
+  # -------------------------------------------------
+  - name: Download basic data
+    run: |
+      BASIC_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.basicData')
+      echo "Downloading basicData.json: $BASIC_URL"
+      curl -L -o basicData.json "$BASIC_URL"
+      cat basicData.json
+
+  # -------------------------------------------------
+  # 6. Download subtitles.json
+  # -------------------------------------------------
+  - name: Download subtitles
+    run: |
+      SUB_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.subtitles')
+      echo "Downloading subtitles.json: $SUB_URL"
+      curl -L -o subtitles.json "$SUB_URL"
+      cat subtitles.json
+
+  # -------------------------------------------------
+  # 7. Calculate audio duration (+2 seconds)
+  # -------------------------------------------------
+  - name: Calculate Audio Duration
+    run: |
+      npm install get-audio-duration
+
+      AUDIO_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.audio')
+      echo "Downloading audio file: $AUDIO_URL"
+
+      curl -L -o audiofile.mp4 "$AUDIO_URL"
+
+      node << 'EOF'
+      import fs from "fs";
+      import { getAudioDurationInSeconds } from "get-audio-duration";
+
+      if (!fs.existsSync("audiofile.mp4")) {
+        console.error("❌ Audio file failed to download");
+        process.exit(1);
+      }
+
+      const seconds = await getAudioDurationInSeconds("audiofile.mp4");
+      const fps = 30;
+
+      const durationInFrames = Math.ceil(seconds * fps) + 60;
+
+      console.log("🎵 Audio Seconds:", seconds);
+      console.log("🎞 Frames:", durationInFrames);
+
+      fs.writeFileSync(
+        "duration.json",
+        JSON.stringify({ durationInFrames, fps })
+      );
+      EOF
+
+  - name: Show Duration
+    run: cat duration.json
+
+  # -------------------------------------------------
+  # 8. Build FINAL PROPS safely (Base64 encoded)
+  # -------------------------------------------------
+  - name: Prepare final props
+    id: final_props
+    run: |
+      PROPS='${{ steps.raw_props.outputs.props }}'
+      DURATION=$(cat duration.json)
+      SUBS=$(cat subtitles.json)
+
+      FINAL=$(jq -n \
+        --argjson a "$PROPS" \
+        --argjson b "$DURATION" \
+        --argjson subs "$SUBS" \
+        '$a + $b + {subtitles: $subs}')
+
+      echo "Final JSON Props:"
+      echo "$FINAL"
+
+      ENCODED=$(echo "$FINAL" | base64 -w 0)
+      echo "props_b64=$ENCODED" >> $GITHUB_OUTPUT
+
+  # -------------------------------------------------
+  # 9. Render Remotion Video with decoded props
+  # -------------------------------------------------
+  - name: Render Video
+    run: |
+      JSON=$(echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode)
+
+      npx remotion render remotion/index.js FinalVideo \
+        --props "$JSON" \
+        --output out/video.mp4
+
+  # -------------------------------------------------
+  # 10. Upload video artifact
+  # -------------------------------------------------
+  - name: Upload final video
+    uses: actions/upload-artifact@v4
+    with:
+      name: final-video
+      path: out/video.mp4
+```

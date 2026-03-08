@@ -12,7 +12,6 @@ import {
     useVideoConfig,
 } from "remotion";
 import "./remotion.css";
-import subtitles from "../subtitle/subtitle.json";
 import { generateScenes } from "../videoData/imagePromptData";
 
 const FPS = 30;
@@ -31,13 +30,12 @@ const ACCENT_COLORS = ["#FF3C3C", "#FFD700", "#00E5FF", "#FF6EC7", "#7FFF00"];
 ═══════════════════════════════════════════════ */
 
 export const MyComposition = ({
-    fps = FPS,
-    audioSrc = "https://ik.imagekit.io/ilunarivanthesecond/audio.mp3?updatedAt=1772955134472",
+    audio,
+    subtitles,
     bgMusicSrc = "audio/bgmusic2.mp3",
-    bgMusicVolume = 0.25,
-    imageKitBase = "https://ik.imagekit.io/ilunarivanthesecond/images",
+    bgMusicVolume = 0.25
 }) => {
-    const SCENES = generateScenes(subtitles);
+    const SCENES = generateScenes(subtitles?.words || []);
     console.log(SCENES);
 
     /* ── FILM GRAIN ── */
@@ -315,7 +313,7 @@ export const MyComposition = ({
             <FilmGrain />
 
             {/* ── Audio ── */}
-            <Audio src={audioSrc} />
+            <Audio src={audio} />
             <Audio src={staticFile(bgMusicSrc)} volume={bgMusicVolume} loop />
 
             {/* ── Captions ── */}
