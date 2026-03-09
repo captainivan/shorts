@@ -32,7 +32,7 @@ MAIN COMPOSITION
 export const MyComposition = ({
     audio,
     subtitles,
-    bgMusicSrc = "audio/bgmusic2.mp3",
+    bgMusicSrc = "audio/bgmusic.mp3",
     bgMusicVolume = 0.25,
 }) => {
 
