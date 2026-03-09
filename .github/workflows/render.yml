@@ -1,227 +1,220 @@
 name: Render Video
 
 on:
-workflow_dispatch: {}
-repository_dispatch:
-types: [run_video_render]
+  workflow_dispatch: {}
+  repository_dispatch:
+    types: [run_video_render]
 
 jobs:
-render:
-runs-on: ubuntu-latest
+  render:
+    runs-on: ubuntu-latest
 
-```
-steps:
-  # -------------------------------------------------
-  # 1. Checkout repo
-  # -------------------------------------------------
-  - name: Checkout Repo
-    uses: actions/checkout@v4
+    steps:
+      # -------------------------------------------------
+      # 1. Checkout repo
+      # -------------------------------------------------
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-  # -------------------------------------------------
-  # 2. Setup Node
-  # -------------------------------------------------
-  - name: Setup Node
-    uses: actions/setup-node@v4
-    with:
-      node-version: 20
+      # -------------------------------------------------
+      # 2. Setup Node
+      # -------------------------------------------------
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-  # -------------------------------------------------
-  # 3. Install jq
-  # -------------------------------------------------
-  - name: Install jq
-    run: sudo apt-get install -y jq
+      # -------------------------------------------------
+      # 3. Install jq
+      # -------------------------------------------------
+      - name: Install jq
+        run: sudo apt-get install -y jq
 
-  # -------------------------------------------------
-  # 4. Install dependencies
-  # -------------------------------------------------
-  - name: Install dependencies
-    run: npm install
+      # -------------------------------------------------
+      # 4. Install dependencies
+      # -------------------------------------------------
+      - name: Install dependencies
+        run: npm install && npm install get-audio-duration googleapis  # FIX: consolidated installs here
 
-  # -------------------------------------------------
-  # 5. Prepare basic props
-  # -------------------------------------------------
-  - name: Prepare raw props
-    id: raw_props
-    run: |
-      RAW=$(printf '%s' \
-      "{\"audio\":\"${{ github.event.client_payload.audio }}\",\
-      \"basicData\":\"${{ github.event.client_payload.basicData }}\",\
-      \"allImageBaseUrl\":\"${{ github.event.client_payload.allImageBaseUrl }}\",\
-      \"id\":\"${{ github.event.client_payload.id }}\",\
-      \"subtitles\":\"${{ github.event.client_payload.subtitles }}\",\
-      \"imageUrls\":\"${{ github.event.client_payload.imageUrls }}\"}")
+      # -------------------------------------------------
+      # 5. Prepare basic props
+      # -------------------------------------------------
+      - name: Prepare raw props
+        id: raw_props
+        run: |
+          RAW=$(printf '%s' \
+          "{\"audio\":\"${{ github.event.client_payload.audio }}\",\
+          \"basicData\":\"${{ github.event.client_payload.basicData }}\",\
+          \"allImageBaseUrl\":\"${{ github.event.client_payload.allImageBaseUrl }}\",\
+          \"id\":\"${{ github.event.client_payload.id }}\",\
+          \"subtitles\":\"${{ github.event.client_payload.subtitles }}\",\
+          \"imageUrls\":\"${{ github.event.client_payload.imageUrls }}\"}")
 
-      echo "props=$RAW" >> $GITHUB_OUTPUT
+          echo "props=$RAW" >> $GITHUB_OUTPUT
 
-  - name: Show Raw Props
-    run: echo '${{ steps.raw_props.outputs.props }}'
+      - name: Show Raw Props
+        run: echo '${{ steps.raw_props.outputs.props }}'
 
-  # -------------------------------------------------
-  # 6. Download basicData.json
-  # -------------------------------------------------
-  - name: Download basic data
-    run: |
-      BASIC_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.basicData')
-      echo "Downloading basicData.json: $BASIC_URL"
-      curl -L -o basicData.json "$BASIC_URL"
-      cat basicData.json
+      # -------------------------------------------------
+      # 6. Download basicData.json
+      # -------------------------------------------------
+      - name: Download basic data
+        run: |
+          BASIC_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.basicData')
+          echo "Downloading basicData.json: $BASIC_URL"
+          curl -L -o basicData.json "$BASIC_URL"
+          cat basicData.json
 
-  # -------------------------------------------------
-  # 7. Download subtitles.json
-  # -------------------------------------------------
-  - name: Download subtitles
-    run: |
-      SUB_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.subtitles')
-      echo "Downloading subtitles.json: $SUB_URL"
-      curl -L -o subtitles.json "$SUB_URL"
-      cat subtitles.json
+      # -------------------------------------------------
+      # 7. Download subtitles.json
+      # -------------------------------------------------
+      - name: Download subtitles
+        run: |
+          SUB_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.subtitles')
+          echo "Downloading subtitles.json: $SUB_URL"
+          curl -L -o subtitles.json "$SUB_URL"
+          cat subtitles.json
 
-  # -------------------------------------------------
-  # 8. Install audio duration package
-  # -------------------------------------------------
-  - name: Install get-audio-duration
-    run: npm install get-audio-duration
+      # -------------------------------------------------
+      # 8. Calculate audio duration (+2 sec)
+      # -------------------------------------------------
+      - name: Calculate Audio Duration
+        run: |
+          AUDIO_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.audio')
+          echo "Downloading audio file: $AUDIO_URL"
+          curl -L -o audiofile.mp4 "$AUDIO_URL"
 
-  # -------------------------------------------------
-  # 9. Calculate audio duration (+2 sec)
-  # -------------------------------------------------
-  - name: Calculate Audio Duration
-    run: |
-      AUDIO_URL=$(echo '${{ steps.raw_props.outputs.props }}' | jq -r '.audio')
-      echo "Downloading audio file: $AUDIO_URL"
-      curl -L -o audiofile.mp4 "$AUDIO_URL"
+          cat > calc_duration.mjs << 'EOF'
+          import fs from "fs";
+          import { getAudioDurationInSeconds } from "get-audio-duration";
 
-      cat > calc_duration.mjs << 'EOF'
-      import fs from "fs";
-      import { getAudioDurationInSeconds } from "get-audio-duration";
-
-      if (!fs.existsSync("audiofile.mp4")) {
-        console.error("❌ Audio file failed to download");
-        process.exit(1);
-      }
-
-      const seconds = await getAudioDurationInSeconds("audiofile.mp4");
-      const fps = 30;
-      const durationInFrames = Math.ceil(seconds * fps) + 60;
-
-      console.log("🎵 Audio Seconds:", seconds);
-      console.log("🎞 Frames:", durationInFrames);
-
-      fs.writeFileSync(
-        "duration.json",
-        JSON.stringify({ durationInFrames, fps })
-      );
-      EOF
-
-      node calc_duration.mjs
-
-  - name: Show Duration
-    run: cat duration.json
-
-  # -------------------------------------------------
-  # 10. Build FINAL PROPS
-  # -------------------------------------------------
-  - name: Prepare final props
-    id: final_props
-    run: |
-      PROPS='${{ steps.raw_props.outputs.props }}'
-      DURATION=$(cat duration.json)
-      SUBS=$(cat subtitles.json)
-
-      FINAL=$(jq -n \
-        --argjson a "$PROPS" \
-        --argjson b "$DURATION" \
-        --argjson subs "$SUBS" \
-        '$a + $b + {subtitles: $subs}')
-
-      echo "Final JSON Props:"
-      echo "$FINAL"
-
-      ENCODED=$(echo "$FINAL" | base64 -w 0)
-      echo "props_b64=$ENCODED" >> $GITHUB_OUTPUT
-
-  # -------------------------------------------------
-  # 11. Render Remotion Video
-  # -------------------------------------------------
-  - name: Render Video
-    run: |
-      JSON=$(echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode)
-
-      npx remotion render remotion/index.js FinalVideo \
-        --props "$JSON" \
-        --output out/video.mp4
-
-  # -------------------------------------------------
-  # 12. Upload artifact
-  # -------------------------------------------------
-  - name: Upload final video
-    uses: actions/upload-artifact@v4
-    with:
-      name: final-video
-      path: out/video.mp4
-
-  # -------------------------------------------------
-  # 13. Upload to YouTube Shorts
-  # -------------------------------------------------
-  - name: Upload to YouTube
-    run: |
-      npm install googleapis
-
-      echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode > props.json
-
-      node << 'EOF'
-      import fs from "fs";
-      import { google } from "googleapis";
-
-      const props = JSON.parse(fs.readFileSync("props.json"));
-      const basic = JSON.parse(fs.readFileSync("basicData.json"));
-
-      const title = basic.title || "Eternal Impact Short";
-      const description = (basic.desc || "Eternal Impact") + "\n\n#shorts";
-      const tags = basic.tags || ["Legend", "History", "Viral"];
-
-      const oauth2Client = new google.auth.OAuth2(
-        process.env.YT_CLIENT_ID,
-        process.env.YT_CLIENT_SECRET
-      );
-
-      oauth2Client.setCredentials({
-        refresh_token: process.env.YT_REFRESH_TOKEN
-      });
-
-      const youtube = google.youtube({
-        version: "v3",
-        auth: oauth2Client
-      });
-
-      const uploadRes = await youtube.videos.insert({
-        part: "snippet,status",
-        requestBody: {
-          snippet: {
-            title,
-            description,
-            tags,
-            categoryId: "27",
-            defaultLanguage: "en"
-          },
-          status: {
-            privacyStatus: "public",
-            selfDeclaredMadeForKids: false
+          if (!fs.existsSync("audiofile.mp4")) {
+            console.error("❌ Audio file failed to download");
+            process.exit(1);
           }
-        },
-        media: {
-          body: fs.createReadStream("out/video.mp4")
-        }
-      });
 
-      const videoId = uploadRes.data.id;
+          const seconds = await getAudioDurationInSeconds("audiofile.mp4");
+          const fps = 30;
+          const durationInFrames = Math.ceil(seconds * fps) + 60;
 
-      console.log("🎉 Short uploaded successfully!");
-      console.log("Video ID:", videoId);
-      console.log("Link: https://youtube.com/shorts/" + videoId);
-      EOF
-    env:
-      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
-      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
-```
+          console.log("🎵 Audio Seconds:", seconds);
+          console.log("🎞 Frames:", durationInFrames);
+
+          fs.writeFileSync(
+            "duration.json",
+            JSON.stringify({ durationInFrames, fps })
+          );
+          EOF
+
+          node calc_duration.mjs
+
+      - name: Show Duration
+        run: cat duration.json
+
+      # -------------------------------------------------
+      # 9. Build FINAL PROPS
+      # -------------------------------------------------
+      - name: Prepare final props
+        id: final_props
+        run: |
+          PROPS='${{ steps.raw_props.outputs.props }}'
+          DURATION=$(cat duration.json)
+          SUBS=$(cat subtitles.json)
+
+          FINAL=$(jq -n \
+            --argjson a "$PROPS" \
+            --argjson b "$DURATION" \
+            --argjson subs "$SUBS" \
+            '$a + $b + {subtitles: $subs}')
+
+          echo "Final JSON Props:"
+          echo "$FINAL"
+
+          ENCODED=$(echo "$FINAL" | base64 -w 0)
+          echo "props_b64=$ENCODED" >> $GITHUB_OUTPUT
+
+      # -------------------------------------------------
+      # 10. Render Remotion Video
+      # -------------------------------------------------
+      - name: Render Video
+        run: |
+          JSON=$(echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode)
+
+          npx remotion render remotion/index.js FinalVideo \
+            --props "$JSON" \
+            --output out/video.mp4
+
+      # -------------------------------------------------
+      # 11. Upload artifact
+      # -------------------------------------------------
+      - name: Upload final video
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-video
+          path: out/video.mp4
+
+      # -------------------------------------------------
+      # 12. Upload to YouTube Shorts
+      # -------------------------------------------------
+      - name: Upload to YouTube
+        run: |
+          echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode > props.json
+
+          # FIX: saved as .mjs so ES module `import` syntax works correctly
+          cat > upload_youtube.mjs << 'EOF'
+          import fs from "fs";
+          import { google } from "googleapis";
+
+          const props = JSON.parse(fs.readFileSync("props.json"));
+          const basic = JSON.parse(fs.readFileSync("basicData.json"));
+
+          const title = basic.title || "Eternal Impact Short";
+          const description = (basic.desc || "Eternal Impact") + "\n\n#shorts";
+          const tags = basic.tags || ["Legend", "History", "Viral"];
+
+          const oauth2Client = new google.auth.OAuth2(
+            process.env.YT_CLIENT_ID,
+            process.env.YT_CLIENT_SECRET
+          );
+
+          oauth2Client.setCredentials({
+            refresh_token: process.env.YT_REFRESH_TOKEN
+          });
+
+          const youtube = google.youtube({
+            version: "v3",
+            auth: oauth2Client
+          });
+
+          const uploadRes = await youtube.videos.insert({
+            part: "snippet,status",
+            requestBody: {
+              snippet: {
+                title,
+                description,
+                tags,
+                categoryId: "27",
+                defaultLanguage: "en"
+              },
+              status: {
+                privacyStatus: "public",
+                selfDeclaredMadeForKids: false
+              }
+            },
+            media: {
+              body: fs.createReadStream("out/video.mp4")
+            }
+          });
+
+          const videoId = uploadRes.data.id;
+
+          console.log("🎉 Short uploaded successfully!");
+          console.log("Video ID:", videoId);
+          console.log("Link: https://youtube.com/shorts/" + videoId);
+          EOF
+
+          node upload_youtube.mjs
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
