@@ -95,7 +95,7 @@ jobs:
 
           const seconds = await getAudioDurationInSeconds("audiofile.mp4");
           const fps = 30;
-          const durationInFrames = Math.ceil(seconds * fps) + 60;
+          const durationInFrames = Math.ceil(seconds * fps) + 30;
 
           console.log("🎵 Audio Seconds:", seconds);
           console.log("🎞 Frames:", durationInFrames);
