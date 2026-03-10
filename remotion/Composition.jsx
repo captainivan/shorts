@@ -33,8 +33,10 @@ export const MyComposition = ({
     audio,
     subtitles,
     bgMusicVolume = 0.25,
-    musicstyle
+    basicData
 }) => {
+
+    let musicstyle = basicData?.musicstyle || "Inspirational";
 
     let bgMusicSrc = "audio/dark.mp3";
 
