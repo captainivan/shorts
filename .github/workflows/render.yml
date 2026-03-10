@@ -34,7 +34,7 @@ jobs:
       # 4. Install dependencies
       # -------------------------------------------------
       - name: Install dependencies
-        run: npm install && npm install get-audio-duration googleapis  # FIX: consolidated installs here
+        run: npm install && npm install get-audio-duration googleapis
 
       # -------------------------------------------------
       # 5. Prepare basic props
@@ -76,7 +76,7 @@ jobs:
           cat subtitles.json
 
       # -------------------------------------------------
-      # 8. Calculate audio duration (+2 sec)
+      # 8. Calculate audio duration (+1 sec)
       # -------------------------------------------------
       - name: Calculate Audio Duration
         run: |
@@ -160,7 +160,6 @@ jobs:
         run: |
           echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode > props.json
 
-          # FIX: saved as .mjs so ES module `import` syntax works correctly
           cat > upload_youtube.mjs << 'EOF'
           import fs from "fs";
           import { google } from "googleapis";
@@ -170,7 +169,7 @@ jobs:
 
           const title = basic.title || "Eternal Impact Short";
           const description = (basic.desc || "Eternal Impact") + "\n\n#shorts";
-          const tags = basic.tags || ["Legend", "History", "Viral"];
+          const tags = basic.tags || ["#Legend", "#History", "#Viral"];
 
           const oauth2Client = new google.auth.OAuth2(
             process.env.YT_CLIENT_ID,
@@ -218,3 +217,12 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+
+      # -------------------------------------------------
+      # 13. Call cleanup API
+      # -------------------------------------------------
+      - name: Trigger cleanup API
+        run: |
+          echo "Calling cleanup endpoint..."
+          curl -X POST https://eternal-impact-render.vercel.app/api/folder-delete
+          echo "Cleanup request sent."
