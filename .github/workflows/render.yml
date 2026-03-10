@@ -120,12 +120,14 @@ jobs:
           PROPS='${{ steps.raw_props.outputs.props }}'
           DURATION=$(cat duration.json)
           SUBS=$(cat subtitles.json)
+          BASIC=$(cat basicData.json)
 
           FINAL=$(jq -n \
             --argjson a "$PROPS" \
             --argjson b "$DURATION" \
             --argjson subs "$SUBS" \
-            '$a + $b + {subtitles: $subs}')
+            --argjson basic "$BASIC" \
+            '$a + $b + {subtitles: $subs} + {basicData: $basic}')
 
           echo "Final JSON Props:"
           echo "$FINAL"

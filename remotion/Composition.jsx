@@ -36,32 +36,17 @@ export const MyComposition = ({
     basicData
 }) => {
 
-    let musicstyle = basicData?.musicstyle || "Inspirational";
+    const musicMap = {
+        Inspirational: "audio/inspirational.mp3",
+        Heroic: "audio/heroic.mp3",
+        Tragic: "audio/tragic.mp3",
+        Dark: "audio/dark.mp3",
+        Mysterious: "audio/mysterious.mp3",
+        Epic: "audio/epic.mp3",
+        Triumphant: "audio/triumphant.mp3"
+    };
 
-    let bgMusicSrc = "audio/dark.mp3";
-
-    if (musicstyle === "Inspirational") {
-        bgMusicSrc = "audio/inspirational.mp3";
-    }
-    if (musicstyle === "Heroic") {
-        bgMusicSrc = "audio/heroic.mp3";
-    }
-    if (musicstyle === "Tragic") {
-        bgMusicSrc = "audio/tragic.mp3";
-    }
-    if (musicstyle === "Dark") {
-        bgMusicSrc = "audio/dark.mp3";
-    }
-    if (musicstyle === "Mysterious") {
-        bgMusicSrc = "audio/mysterious.mp3";
-    }
-    if (musicstyle === "Epic") {
-        bgMusicSrc = "audio/epic.mp3";
-    }
-    if (musicstyle === "Triumphant") {
-        bgMusicSrc = "audio/triumphant.mp3";
-    }
-
+    const bgMusicSrc = musicMap[basicData?.musicstyle] || "audio/inspirational.mp3";
 
     /* ── SAFE SUBTITLES ── */
     const safeSubtitles = subtitles?.words || [];
