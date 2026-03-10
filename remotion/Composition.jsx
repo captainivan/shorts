@@ -32,9 +32,34 @@ MAIN COMPOSITION
 export const MyComposition = ({
     audio,
     subtitles,
-    bgMusicSrc = "audio/bgmusic.mp3",
     bgMusicVolume = 0.25,
+    musicstyle
 }) => {
+
+    let bgMusicSrc = "audio/dark.mp3";
+
+    if (musicstyle === "Inspirational") {
+        bgMusicSrc = "audio/inspirational.mp3";
+    }
+    if (musicstyle === "Heroic") {
+        bgMusicSrc = "audio/heroic.mp3";
+    }
+    if (musicstyle === "Tragic") {
+        bgMusicSrc = "audio/tragic.mp3";
+    }
+    if (musicstyle === "Dark") {
+        bgMusicSrc = "audio/dark.mp3";
+    }
+    if (musicstyle === "Mysterious") {
+        bgMusicSrc = "audio/mysterious.mp3";
+    }
+    if (musicstyle === "Epic") {
+        bgMusicSrc = "audio/epic.mp3";
+    }
+    if (musicstyle === "Triumphant") {
+        bgMusicSrc = "audio/triumphant.mp3";
+    }
+
 
     /* ── SAFE SUBTITLES ── */
     const safeSubtitles = subtitles?.words || [];
