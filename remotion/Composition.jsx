@@ -46,13 +46,13 @@ export const MyComposition = ({
     };
 
     const volumeMap = {
-        Inspirational: 0.25,
-        Heroic: 0.25,
+        Inspirational: 0.30,
+        Heroic: 0.30,
         Tragic: 0.50,
         Dark: 1,
         Mysterious: 1,
-        Epic: 0.25,
-        Triumphant: 0.25
+        Epic: 0.30,
+        Triumphant: 0.50
     }
 
     const bgMusicSrc = musicMap[basicData?.musicstyle] || "audio/triumphant.mp3";
