@@ -32,7 +32,6 @@ MAIN COMPOSITION
 export const MyComposition = ({
     audio,
     subtitles,
-    bgMusicVolume = 0.25,
     basicData
 }) => {
 
@@ -46,7 +45,19 @@ export const MyComposition = ({
         Triumphant: "audio/triumphant.mp3"
     };
 
-    const bgMusicSrc = musicMap[basicData?.musicstyle] || "audio/inspirational.mp3";
+    const volumeMap = {
+        Inspirational: 0.25,
+        Heroic: 0.25,
+        Tragic: 0.50,
+        Dark: 1,
+        Mysterious: 1,
+        Epic: 0.25,
+        Triumphant: 0.25
+    }
+
+    const bgMusicSrc = musicMap[basicData?.musicstyle] || "audio/triumphant.mp3";
+
+    const bgMusicVolume = volumeMap[basicData?.musicstyle] || 0.25;
 
     /* ── SAFE SUBTITLES ── */
     const safeSubtitles = subtitles?.words || [];
