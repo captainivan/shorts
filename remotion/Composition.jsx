@@ -44,11 +44,11 @@ export const MyComposition = ({
     };
 
     const volumeMap = {
-        Inspirational: 0.25,
-        Tragic: 0.25,
-        Dark: 0.25,
-        Mysterious: 0.25,
-        Epic: 0.25
+        Inspirational: 0.20,
+        Tragic: 0.30,
+        Dark: 0.30,
+        Mysterious: 0.30,
+        Epic: 0.20
     }
 
     const bgMusicSrc = musicMap[basicData?.musicstyle] || "audio/inspirational.mp3";
