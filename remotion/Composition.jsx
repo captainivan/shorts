@@ -37,15 +37,14 @@ export const MyComposition = ({
 
     const musicMap = {
         Inspirational: "audio/inspirational.mp3",
-        Heroic: "audio/heroic.mp3",
         Tragic: "audio/tragic.mp3",
         Dark: "audio/dark.mp3",
         Mysterious: "audio/mysterious.mp3",
-        Epic: "audio/epic.mp3",
-        Triumphant: "audio/triumphant.mp3"
+        Epic: "audio/epic.mp3"
     };
 
     const volumeMap = {
+<<<<<<< HEAD
         Inspirational: 0.25,
         Heroic: 0.25,
         Tragic: 0.25,
@@ -53,11 +52,18 @@ export const MyComposition = ({
         Mysterious: 0.25,
         Epic: 0.25,
         Triumphant: 0.25
+=======
+        Inspirational: 0.20,
+        Tragic: 0.30,
+        Dark: 0.30,
+        Mysterious: 0.30,
+        Epic: 0.20
+>>>>>>> 509ef62 (removed two audio)
     }
 
-    const bgMusicSrc = musicMap[basicData?.musicstyle] || "audio/triumphant.mp3";
+    const bgMusicSrc = musicMap[basicData?.musicstyle] || "audio/inspirational.mp3";
 
-    const bgMusicVolume = volumeMap[basicData?.musicstyle] || 0.25;
+    const bgMusicVolume = volumeMap[basicData?.musicstyle] || 0.20;
 
     /* ── SAFE SUBTITLES ── */
     const safeSubtitles = subtitles?.words || [];
