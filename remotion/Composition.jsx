@@ -46,12 +46,12 @@ export const MyComposition = ({
     };
 
     const volumeMap = {
-        Inspirational: 0.30,
-        Heroic: 0.30,
+        Inspirational: 0.50,
+        Heroic: 0.50,
         Tragic: 0.50,
-        Dark: 1,
-        Mysterious: 1,
-        Epic: 0.30,
+        Dark: 0.50,
+        Mysterious: 0.50,
+        Epic: 0.50,
         Triumphant: 0.50
     }
 
