@@ -155,70 +155,70 @@ jobs:
           name: final-video
           path: out/video.mp4
 
-      # # # -------------------------------------------------
-      # # # 12. Upload to YouTube Shorts
-      # # # -------------------------------------------------
-      # - name: Upload to YouTube
-      #   run: |
-      #     echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode > props.json
+      # # -------------------------------------------------
+      # # 12. Upload to YouTube Shorts
+      # # -------------------------------------------------
+      - name: Upload to YouTube
+        run: |
+          echo "${{ steps.final_props.outputs.props_b64 }}" | base64 --decode > props.json
 
-      #     cat > upload_youtube.mjs << 'EOF'
-      #     import fs from "fs";
-      #     import { google } from "googleapis";
+          cat > upload_youtube.mjs << 'EOF'
+          import fs from "fs";
+          import { google } from "googleapis";
 
-      #     const props = JSON.parse(fs.readFileSync("props.json"));
-      #     const basic = JSON.parse(fs.readFileSync("basicData.json"));
+          const props = JSON.parse(fs.readFileSync("props.json"));
+          const basic = JSON.parse(fs.readFileSync("basicData.json"));
 
-      #     const title = basic.title || "Eternal Impact Short";
-      #     const description = (basic.desc || "Eternal Impact") + "\n\n#shorts";
-      #     const tags = basic.tags || ["#Legend", "#History", "#Viral"];
+          const title = basic.title || "Eternal Impact Short";
+          const description = (basic.desc || "Eternal Impact") + "\n\n#shorts";
+          const tags = basic.tags || ["#Legend", "#History", "#Viral"];
 
-      #     const oauth2Client = new google.auth.OAuth2(
-      #       process.env.YT_CLIENT_ID,
-      #       process.env.YT_CLIENT_SECRET
-      #     );
+          const oauth2Client = new google.auth.OAuth2(
+            process.env.YT_CLIENT_ID,
+            process.env.YT_CLIENT_SECRET
+          );
 
-      #     oauth2Client.setCredentials({
-      #       refresh_token: process.env.YT_REFRESH_TOKEN
-      #     });
+          oauth2Client.setCredentials({
+            refresh_token: process.env.YT_REFRESH_TOKEN
+          });
 
-      #     const youtube = google.youtube({
-      #       version: "v3",
-      #       auth: oauth2Client
-      #     });
+          const youtube = google.youtube({
+            version: "v3",
+            auth: oauth2Client
+          });
 
-      #     const uploadRes = await youtube.videos.insert({
-      #       part: "snippet,status",
-      #       requestBody: {
-      #         snippet: {
-      #           title,
-      #           description,
-      #           tags,
-      #           categoryId: "27",
-      #           defaultLanguage: "en"
-      #         },
-      #         status: {
-      #           privacyStatus: "public",
-      #           selfDeclaredMadeForKids: false
-      #         }
-      #       },
-      #       media: {
-      #         body: fs.createReadStream("out/video.mp4")
-      #       }
-      #     });
+          const uploadRes = await youtube.videos.insert({
+            part: "snippet,status",
+            requestBody: {
+              snippet: {
+                title,
+                description,
+                tags,
+                categoryId: "27",
+                defaultLanguage: "en"
+              },
+              status: {
+                privacyStatus: "public",
+                selfDeclaredMadeForKids: false
+              }
+            },
+            media: {
+              body: fs.createReadStream("out/video.mp4")
+            }
+          });
 
-      #     const videoId = uploadRes.data.id;
+          const videoId = uploadRes.data.id;
 
-      #     console.log("🎉 Short uploaded successfully!");
-      #     console.log("Video ID:", videoId);
-      #     console.log("Link: https://youtube.com/shorts/" + videoId);
-      #     EOF
+          console.log("🎉 Short uploaded successfully!");
+          console.log("Video ID:", videoId);
+          console.log("Link: https://youtube.com/shorts/" + videoId);
+          EOF
 
-      #     node upload_youtube.mjs
-      #   env:
-      #     YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
-      #     YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-      #     YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          node upload_youtube.mjs
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
 
       # -------------------------------------------------
       # 13. Call cleanup API
