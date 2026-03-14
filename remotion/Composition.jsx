@@ -44,16 +44,16 @@ export const MyComposition = ({
     };
 
     const volumeMap = {
-        Inspirational: 0.20,
+        Inspirational: 0.25,
         Tragic: 0.30,
-        Dark: 0.30,
+        Dark: 0.60,
         Mysterious: 0.30,
-        Epic: 0.20
+        Epic: 0.25
     }
 
-    const bgMusicSrc = musicMap[basicData?.musicstyle] || "audio/inspirational.mp3";
+    const bgMusicSrc = musicMap[basicData?.musicstyle] || "audio/epic.mp3";
 
-    const bgMusicVolume = volumeMap[basicData?.musicstyle] || 0.20;
+    const bgMusicVolume = volumeMap[basicData?.musicstyle] || 0.25;
 
     /* ── SAFE SUBTITLES ── */
     const safeSubtitles = subtitles?.words || [];
