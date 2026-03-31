@@ -16,6 +16,7 @@ export default function Home() {
         compositionHeight={1920}
         fps={30}
         controls={true}
+        className='border border-2 border-white '
       />
     </div>
   );

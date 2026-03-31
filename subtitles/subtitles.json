@@ -1,0 +1,1094 @@
+[
+    {
+        "text": "A",
+        "start": 160,
+        "end": 280,
+        "confidence": 0.99902344,
+        "speaker": null
+    },
+    {
+        "text": "single",
+        "start": 280,
+        "end": 640,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "desk",
+        "start": 640,
+        "end": 1000,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "in",
+        "start": 1000,
+        "end": 1200,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "Washington,",
+        "start": 1200,
+        "end": 1760,
+        "confidence": 0.9746094,
+        "speaker": null
+    },
+    {
+        "text": "D.C.",
+        "start": 1760,
+        "end": 2246,
+        "confidence": 0.92554,
+        "speaker": null
+    },
+    {
+        "text": "held",
+        "start": 2354,
+        "end": 2840,
+        "confidence": 0.92554,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 2840,
+        "end": 3000,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "fate",
+        "start": 3000,
+        "end": 3320,
+        "confidence": 0.77319336,
+        "speaker": null
+    },
+    {
+        "text": "of",
+        "start": 3320,
+        "end": 3480,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "an",
+        "start": 3480,
+        "end": 3640,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "entire",
+        "start": 3640,
+        "end": 4040,
+        "confidence": 0.99975586,
+        "speaker": null
+    },
+    {
+        "text": "generation.",
+        "start": 4040,
+        "end": 4720,
+        "confidence": 0.99902344,
+        "speaker": null
+    },
+    {
+        "text": "In",
+        "start": 5200,
+        "end": 5520,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "1960,",
+        "start": 5520,
+        "end": 6320,
+        "confidence": 0.99951,
+        "speaker": null
+    },
+    {
+        "text": "a",
+        "start": 6560,
+        "end": 6840,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "miracle",
+        "start": 6840,
+        "end": 7320,
+        "confidence": 0.9942627,
+        "speaker": null
+    },
+    {
+        "text": "drug",
+        "start": 7320,
+        "end": 7560,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "was",
+        "start": 7560,
+        "end": 7880,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "sweeping",
+        "start": 7880,
+        "end": 8360,
+        "confidence": 0.9958496,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 8360,
+        "end": 8520,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "globe,",
+        "start": 8520,
+        "end": 8960,
+        "confidence": 0.99487305,
+        "speaker": null
+    },
+    {
+        "text": "Marketed",
+        "start": 9360,
+        "end": 10000,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "as",
+        "start": 10000,
+        "end": 10200,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "a",
+        "start": 10200,
+        "end": 10360,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "harmless",
+        "start": 10360,
+        "end": 10760,
+        "confidence": 0.8927409,
+        "speaker": null
+    },
+    {
+        "text": "cure",
+        "start": 10760,
+        "end": 11080,
+        "confidence": 0.9333496,
+        "speaker": null
+    },
+    {
+        "text": "for",
+        "start": 11080,
+        "end": 11280,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "morning",
+        "start": 11280,
+        "end": 11600,
+        "confidence": 0.9975586,
+        "speaker": null
+    },
+    {
+        "text": "sickness.",
+        "start": 11600,
+        "end": 12240,
+        "confidence": 0.9996745,
+        "speaker": null
+    },
+    {
+        "text": "Doctors",
+        "start": 12480,
+        "end": 13040,
+        "confidence": 0.9998372,
+        "speaker": null
+    },
+    {
+        "text": "were",
+        "start": 13040,
+        "end": 13240,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "handing",
+        "start": 13240,
+        "end": 13560,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "it",
+        "start": 13560,
+        "end": 13720,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "out",
+        "start": 13720,
+        "end": 13880,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "to",
+        "start": 13880,
+        "end": 14040,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "pregnant",
+        "start": 14040,
+        "end": 14480,
+        "confidence": 0.8873291,
+        "speaker": null
+    },
+    {
+        "text": "women",
+        "start": 14480,
+        "end": 14760,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "by",
+        "start": 14760,
+        "end": 15000,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 15000,
+        "end": 15200,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "millions.",
+        "start": 15200,
+        "end": 15840,
+        "confidence": 0.998291,
+        "speaker": null
+    },
+    {
+        "text": "When",
+        "start": 16400,
+        "end": 16680,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 16680,
+        "end": 16880,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "application",
+        "start": 16880,
+        "end": 17440,
+        "confidence": 0.99975586,
+        "speaker": null
+    },
+    {
+        "text": "for",
+        "start": 17440,
+        "end": 17720,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "US",
+        "start": 17720,
+        "end": 18080,
+        "confidence": 0.984375,
+        "speaker": null
+    },
+    {
+        "text": "Approval",
+        "start": 18080,
+        "end": 18760,
+        "confidence": 0.9557292,
+        "speaker": null
+    },
+    {
+        "text": "landed",
+        "start": 18760,
+        "end": 19160,
+        "confidence": 0.99975586,
+        "speaker": null
+    },
+    {
+        "text": "on",
+        "start": 19160,
+        "end": 19320,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "her",
+        "start": 19320,
+        "end": 19560,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "desk,",
+        "start": 19560,
+        "end": 20000,
+        "confidence": 0.98706055,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 20160,
+        "end": 20480,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "pressure",
+        "start": 20480,
+        "end": 20920,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "was",
+        "start": 20920,
+        "end": 21120,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "immediate",
+        "start": 21120,
+        "end": 21600,
+        "confidence": 0.84375,
+        "speaker": null
+    },
+    {
+        "text": "and",
+        "start": 21600,
+        "end": 21920,
+        "confidence": 0.9741211,
+        "speaker": null
+    },
+    {
+        "text": "intense.",
+        "start": 22000,
+        "end": 22640,
+        "confidence": 0.99975586,
+        "speaker": null
+    },
+    {
+        "text": "Pharmaceutical",
+        "start": 23120,
+        "end": 24000,
+        "confidence": 0.9998372,
+        "speaker": null
+    },
+    {
+        "text": "giants",
+        "start": 24000,
+        "end": 24520,
+        "confidence": 0.9996745,
+        "speaker": null
+    },
+    {
+        "text": "demanded",
+        "start": 24520,
+        "end": 25000,
+        "confidence": 0.99975586,
+        "speaker": null
+    },
+    {
+        "text": "a",
+        "start": 25000,
+        "end": 25160,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "signature,",
+        "start": 25160,
+        "end": 25680,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "calling",
+        "start": 25920,
+        "end": 26320,
+        "confidence": 0.8391113,
+        "speaker": null
+    },
+    {
+        "text": "her",
+        "start": 26320,
+        "end": 26520,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "a",
+        "start": 26520,
+        "end": 26680,
+        "confidence": 0.99902344,
+        "speaker": null
+    },
+    {
+        "text": "fussy",
+        "start": 26680,
+        "end": 27080,
+        "confidence": 0.9991862,
+        "speaker": null
+    },
+    {
+        "text": "bureaucrat",
+        "start": 27080,
+        "end": 27760,
+        "confidence": 0.9720052,
+        "speaker": null
+    },
+    {
+        "text": "for",
+        "start": 27760,
+        "end": 27960,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "delaying",
+        "start": 27960,
+        "end": 28360,
+        "confidence": 0.9996745,
+        "speaker": null
+    },
+    {
+        "text": "their",
+        "start": 28360,
+        "end": 28560,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "profits.",
+        "start": 28560,
+        "end": 29040,
+        "confidence": 0.76538086,
+        "speaker": null
+    },
+    {
+        "text": "But",
+        "start": 29680,
+        "end": 29840,
+        "confidence": 0.99609375,
+        "speaker": null
+    },
+    {
+        "text": "she",
+        "start": 29840,
+        "end": 30040,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "noticed",
+        "start": 30040,
+        "end": 30520,
+        "confidence": 0.9998372,
+        "speaker": null
+    },
+    {
+        "text": "a",
+        "start": 30520,
+        "end": 30680,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "tiny,",
+        "start": 30680,
+        "end": 31160,
+        "confidence": 0.9998372,
+        "speaker": null
+    },
+    {
+        "text": "overlooked",
+        "start": 31160,
+        "end": 31880,
+        "confidence": 0.99853516,
+        "speaker": null
+    },
+    {
+        "text": "detail",
+        "start": 31880,
+        "end": 32160,
+        "confidence": 0.99853516,
+        "speaker": null
+    },
+    {
+        "text": "in",
+        "start": 32240,
+        "end": 32520,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 32520,
+        "end": 32680,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "data",
+        "start": 32680,
+        "end": 32960,
+        "confidence": 0.9316406,
+        "speaker": null
+    },
+    {
+        "text": "reports",
+        "start": 33440,
+        "end": 33840,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "of",
+        "start": 33840,
+        "end": 34160,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "strange",
+        "start": 34160,
+        "end": 34640,
+        "confidence": 0.998291,
+        "speaker": null
+    },
+    {
+        "text": "side",
+        "start": 34720,
+        "end": 35040,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "effects.",
+        "start": 35040,
+        "end": 35680,
+        "confidence": 0.99902344,
+        "speaker": null
+    },
+    {
+        "text": "She",
+        "start": 36160,
+        "end": 36480,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "stood",
+        "start": 36480,
+        "end": 36800,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "her",
+        "start": 36800,
+        "end": 37000,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "ground,",
+        "start": 37000,
+        "end": 37280,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "rejecting",
+        "start": 37680,
+        "end": 38240,
+        "confidence": 0.91829425,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 38240,
+        "end": 38440,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "drug",
+        "start": 38440,
+        "end": 38720,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "six",
+        "start": 38800,
+        "end": 39200,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "times,",
+        "start": 39200,
+        "end": 39600,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "despite",
+        "start": 39920,
+        "end": 40320,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "corporate",
+        "start": 40400,
+        "end": 40960,
+        "confidence": 0.9970703,
+        "speaker": null
+    },
+    {
+        "text": "harassment",
+        "start": 40960,
+        "end": 41560,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "and",
+        "start": 41560,
+        "end": 41760,
+        "confidence": 0.9838867,
+        "speaker": null
+    },
+    {
+        "text": "political",
+        "start": 41760,
+        "end": 42080,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "threats.",
+        "start": 42240,
+        "end": 42880,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "While",
+        "start": 43360,
+        "end": 43720,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "thousands",
+        "start": 43720,
+        "end": 44200,
+        "confidence": 0.99975586,
+        "speaker": null
+    },
+    {
+        "text": "of",
+        "start": 44200,
+        "end": 44360,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "babies",
+        "start": 44360,
+        "end": 44760,
+        "confidence": 0.96435547,
+        "speaker": null
+    },
+    {
+        "text": "across",
+        "start": 44760,
+        "end": 45120,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "Europe",
+        "start": 45199,
+        "end": 45520,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "and",
+        "start": 45520,
+        "end": 45800,
+        "confidence": 0.9951172,
+        "speaker": null
+    },
+    {
+        "text": "Africa",
+        "start": 45800,
+        "end": 46160,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "were",
+        "start": 46480,
+        "end": 46800,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "born",
+        "start": 46800,
+        "end": 47120,
+        "confidence": 0.976888,
+        "speaker": null
+    },
+    {
+        "text": "with",
+        "start": 47120,
+        "end": 47400,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "severe",
+        "start": 47400,
+        "end": 47800,
+        "confidence": 0.99560547,
+        "speaker": null
+    },
+    {
+        "text": "deformities",
+        "start": 47800,
+        "end": 48400,
+        "confidence": 0.99975586,
+        "speaker": null
+    },
+    {
+        "text": "and",
+        "start": 48400,
+        "end": 48640,
+        "confidence": 0.99658203,
+        "speaker": null
+    },
+    {
+        "text": "missing",
+        "start": 48640,
+        "end": 49080,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "limbs,",
+        "start": 49080,
+        "end": 49520,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 49760,
+        "end": 50040,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "United",
+        "start": 50040,
+        "end": 50320,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "States",
+        "start": 50400,
+        "end": 50760,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "was",
+        "start": 50760,
+        "end": 51040,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "spared.",
+        "start": 51040,
+        "end": 51520,
+        "confidence": 0.8520508,
+        "speaker": null
+    },
+    {
+        "text": "Her",
+        "start": 51920,
+        "end": 52240,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "stubbornness",
+        "start": 52240,
+        "end": 52920,
+        "confidence": 0.99820966,
+        "speaker": null
+    },
+    {
+        "text": "didn't",
+        "start": 52920,
+        "end": 53320,
+        "confidence": 0.99658203,
+        "speaker": null
+    },
+    {
+        "text": "just",
+        "start": 53320,
+        "end": 53600,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "prevent",
+        "start": 53600,
+        "end": 53920,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "a",
+        "start": 53920,
+        "end": 54120,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "tragedy.",
+        "start": 54120,
+        "end": 54800,
+        "confidence": 0.9838867,
+        "speaker": null
+    },
+    {
+        "text": "It",
+        "start": 54880,
+        "end": 55200,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "forced",
+        "start": 55200,
+        "end": 55520,
+        "confidence": 0.99316406,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 55520,
+        "end": 55720,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "world",
+        "start": 55720,
+        "end": 55960,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "to",
+        "start": 55960,
+        "end": 56240,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "rewrite",
+        "start": 56240,
+        "end": 56680,
+        "confidence": 0.99938965,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 56680,
+        "end": 56840,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "laws",
+        "start": 56840,
+        "end": 57160,
+        "confidence": 0.99975586,
+        "speaker": null
+    },
+    {
+        "text": "of",
+        "start": 57160,
+        "end": 57320,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "drug",
+        "start": 57320,
+        "end": 57560,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "safety",
+        "start": 57560,
+        "end": 58080,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "forever.",
+        "start": 58080,
+        "end": 58560,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "She",
+        "start": 59170,
+        "end": 59330,
+        "confidence": 0.99902344,
+        "speaker": null
+    },
+    {
+        "text": "was",
+        "start": 59330,
+        "end": 59530,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "the",
+        "start": 59530,
+        "end": 59690,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "scientist",
+        "start": 59690,
+        "end": 60210,
+        "confidence": 0.99853516,
+        "speaker": null
+    },
+    {
+        "text": "who",
+        "start": 60210,
+        "end": 60450,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "saved",
+        "start": 60450,
+        "end": 60730,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "a",
+        "start": 60730,
+        "end": 60890,
+        "confidence": 0.99902344,
+        "speaker": null
+    },
+    {
+        "text": "million",
+        "start": 60890,
+        "end": 61170,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "children.",
+        "start": 61170,
+        "end": 61570,
+        "confidence": 0.99658203,
+        "speaker": null
+    },
+    {
+        "text": "Her",
+        "start": 61970,
+        "end": 62290,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "name",
+        "start": 62290,
+        "end": 62490,
+        "confidence": 1,
+        "speaker": null
+    },
+    {
+        "text": "was",
+        "start": 62490,
+        "end": 62650,
+        "confidence": 0.9995117,
+        "speaker": null
+    },
+    {
+        "text": "Frances",
+        "start": 62650,
+        "end": 63050,
+        "confidence": 0.94262695,
+        "speaker": null
+    },
+    {
+        "text": "Oldham",
+        "start": 63050,
+        "end": 63650,
+        "confidence": 0.998291,
+        "speaker": null
+    },
+    {
+        "text": "Kelsey.",
+        "start": 63650,
+        "end": 64290,
+        "confidence": 0.99243164,
+        "speaker": null
+    }
+]
