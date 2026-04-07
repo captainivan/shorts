@@ -1,15 +1,15 @@
 
 
 export async function POST() {
-    let baseUrl = "https://ik.imagekit.io/shunya"
+    const BASE_URL= process.env.IMAGEKIT_URL_ENDPOINT;
     try {
         const payLoad = {
             id: 'demo-123',
-            allImageBaseUrl: `https://ik.imagekit.io/shunya/images`,
-            imageUrls: `https://ik.imagekit.io/shunya/imageArray.json?updatedAt=${Date.now()}`,
-            audio: `https://ik.imagekit.io/shunya/audio.mp3?updatedAt=${Date.now()}`,
-            subtitles: `https://ik.imagekit.io/shunya/subtitles.json?updatedAt=${Date.now()}`,
-            basicData: `https://ik.imagekit.io/shunya/basicData.json?updatedAt=${Date.now()}`,
+            allImageBaseUrl: `${BASE_URL}/images`,
+            imageUrls: `${BASE_URL}/imageArray.json?updatedAt=${Date.now()}`,
+            audio:     `${BASE_URL}/audio.mp3?updatedAt=${Date.now()}`,
+            subtitles: `${BASE_URL}/subtitles.json?updatedAt=${Date.now()}`,
+            basicData: `${BASE_URL}/basicData.json?updatedAt=${Date.now()}`,
         }
 
         const res = await fetch(
