@@ -15,6 +15,7 @@ import "./remotion.css";
 
 const FPS = 30;
 const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
+const BASE_URL = process.env.IMAGEKIT_URL_ENDPOINT
 
 /* ─────────────── UTILS ─────────────── */
 
@@ -236,7 +237,7 @@ export const MyComposition = ({
         return (
             <AbsoluteFill>
                 <Img
-                    src={`https://ik.imagekit.io/shunya/images/${sceneNumber}.jpg?updatedAt=${Date.now()}`}
+                    src={`${BASE_URL}/images/${sceneNumber}.jpg?updatedAt=${Date.now()}`}
                     style={{
                         width: "100%",
                         height: "100%",
@@ -373,7 +374,7 @@ export const MyComposition = ({
         <AbsoluteFill style={{ backgroundColor: "black", overflow: "hidden" }}>
             <Scenes />
             <FilmGrain />
-            <Audio src={audio || "https://ik.imagekit.io/shunya/audio.mp3"} />
+            <Audio src={audio || `${BASE_URL}/audio.mp3`} />
             <Audio src={staticFile(bgMusicSrc)} volume={bgMusicVolume} loop />
             <div style={{ position: "absolute", inset: 0, zIndex: 110 }}>
                 <Captions />
