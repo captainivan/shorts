@@ -15,7 +15,7 @@ import "./remotion.css";
 
 const FPS = 30;
 const msToFrames = (ms) => Math.round((ms / 1000) * FPS);
-const BASE_URL = process.env.IMAGEKIT_URL_ENDPOINT
+const BASE_URL = `https://ik.imagekit.io/ilunarivanthesecond`
 
 /* ─────────────── UTILS ─────────────── */
 
